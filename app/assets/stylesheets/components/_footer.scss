@@ -1,0 +1,19 @@
+.footer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 56px;
+  width: 100%;
+  background-image: linear-gradient(to bottom, #00000031 0%, #000000af 100%);
+}
+.footer-links a {
+  color: whitesmoke;
+  opacity: 0.6;
+  text-decoration: none;
+  font-size: xx-large;
+  padding: 0px 10px;
+  margin: 6px;
+}
+.footer-links a:hover {
+  opacity: 1;
+}
