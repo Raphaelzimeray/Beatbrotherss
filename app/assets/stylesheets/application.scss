@@ -10,3 +10,8 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+body {
+  background-image: linear-gradient(to right, #9646d3, #b48ad5);
+}
