@@ -7,7 +7,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+<<<<<<< Updated upstream
     @user.mail_address = Random
+=======
+    @user.mail_address = Time.now.iso8601 + "#{rand(999999)}@mail.fr"
+>>>>>>> Stashed changes
     @user.password = "password"
     @user.save
   end
