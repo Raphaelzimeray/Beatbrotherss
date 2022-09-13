@@ -7,9 +7,9 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.mail_address = Random
+    @user.mail_address = Time.now.iso8601 + "#{rand(999999)}"
     @user.password = "password"
-    @user.save
+    @user.save!
   end
 
   def index
