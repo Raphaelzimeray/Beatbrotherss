@@ -9,7 +9,9 @@
       <div class="panel panel-default">
         <% if @chatroom.messages.any? %>
           <div class="panel-body" id="messages">
-            <%= render partial: 'messages/message', collection: @chatroom.messages%>
+            <% @chatroom.messages.each do |message| %>
+              <%= render partial: 'messages/message', message: message%>
+            <% end %>
           </div>
         <%else%>
           <div class="panel-body hidden" id="messages">
