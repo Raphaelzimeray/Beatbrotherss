@@ -10,7 +10,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class=<%= params[:controller] == "users" && params[:action] == "show" ? "show-background" : "default-background"%>>
 
     <div class="container">
 

@@ -32,6 +32,10 @@ class UsersController < ApplicationController
     @user.destroy
   end
 
+  def parameters
+    @parameters = User.parameters
+  end
+  
   private
 
   def set_user
