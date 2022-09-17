@@ -1,24 +1,33 @@
-<div class="purple">
-  <h1>Discover</h1>
+<h2>Check out these great artists 🤘</h2>
 
-  <p> In each person, a musician is hiding!</p>
+<br>
 
-  <div class="swipe-card" style="background-image: url(https://alchetron.com/cdn/ringo-singer-37fe0034-effb-4596-a28c-b776a79f67c-resize-750.jpeg)">
-
+<% @users.each do |user| %>
+  <div class="card" style="width: 18rem;">
+    <img src=" <%= user.avatar_url %> " class="card-img-top" alt="My profile pic">
+    <div class="card-body">
+      <h5 class="card-title"> <%= user.name %> </h5>
+      <p class="card-text"> <%= user.description %> </p>
+    </div>
+    <ul class="list-group list-group-flush">
+    <li class="list-group-item">I love : <%= user.music_style %></li>
+    <li class="list-group-item">I want to be a : <%= user.goal %></li>
+    <li class="list-group-item">I'm available on : <%= user.disponibility %></li>
+    </ul>
+    <div class="card-body">
+      <div class="row justify-content-evenly">
+        <div class="love-hate-button col-4">
+          <%= link_to toggle_favorite_user_path(user), remote: true, method: :post do %>
+                <i class="fa-solid fa-heart"></i>
+          <% end %>
+        </div>
+        <div class="love-hate-button col-4">
+          <%= link_to toggle_favorite_user_path(user), remote: true, method: :post do %>
+                <i class="fa-solid fa-xmark"></i>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <a href="" class="button-link">
-    <i class="fa-solid fa-heart"></i>
-    Add on my list
-  </a>
-
-  <a href="" class="button-link">
-    <i class="fa-solid fa-face-confused"></i>
-    Add on my list
-  </a>
-
-  <a href="" class="button-link">
-    <i class="fa-solid fa-heart"></i>
-    Add on my list
-  </a>
-</div>
+  <br>
+<% end %>
