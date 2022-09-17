@@ -46,7 +46,7 @@ user2 = User.new(
   experience_in_years: "2",
   number_of_concerts: "",
   disponibility: "Every night",
-  avatar_url: "https://img.freepik.com/photos-gratuite/jeune-musicien-jazz-afro-americain-jouant-du-saxophone-bleu_155003-32575.jpg?w=2000&t=st=1663088993~exp=1663089593~hmac=1b8fd57a976f385ae753b7de75300229db0fbad9b241ef72a004e250c90a8402"
+  avatar_url: "https://img.freepik.com/photos-gratuite/jeune-musicien-jazz-afro-americain-jouant-du-saxophone-bleu_155003-32575.jpg"
 )
 user2.save!
 puts "-> #{user2.name} has been created"
