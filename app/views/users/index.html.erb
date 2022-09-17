@@ -1,29 +1,27 @@
-<h2>Check out these great artists 🤘</h2>
-
 <br>
 
 <% @users.each do |user| %>
   <div class="card" style="width: 18rem;">
     <img src=" <%= user.avatar_url %> " class="card-img-top" alt="My profile pic">
-    <div class="card-body">
+    <div class="card-body start">
       <h5 class="card-title"> <%= user.name %> </h5>
       <p class="card-text"> <%= user.description %> </p>
     </div>
     <ul class="list-group list-group-flush">
     <li class="list-group-item">I love : <%= user.music_style %></li>
     <li class="list-group-item">I want to be a : <%= user.goal %></li>
-    <li class="list-group-item">I'm available on : <%= user.disponibility %></li>
+    <li class="list-group-item">My availability : <%= user.disponibility %></li>
     </ul>
-    <div class="card-body">
+    <div class="card-body end">
       <div class="row justify-content-evenly">
         <div class="love-hate-button col-4">
           <%= link_to toggle_favorite_user_path(user), remote: true, method: :post do %>
-                <i class="fa-solid fa-heart"></i>
+                <i class="fa-solid fa-xmark"></i>
           <% end %>
         </div>
         <div class="love-hate-button col-4">
           <%= link_to toggle_favorite_user_path(user), remote: true, method: :post do %>
-                <i class="fa-solid fa-xmark"></i>
+                <i class="fa-solid fa-heart"></i>
           <% end %>
         </div>
       </div>
