@@ -31,3 +31,13 @@
   </div>
   <br>
 <% end %>
+
+<div class="col-xs-12 col-sm-6">
+  <h3>Liked Persons</h3>
+    <div class="favorites">
+      <% @favorite_users.each do |user| %>
+        <%= render 'user', user: user %>
+      <% end %>
+    </div>
+</div>
+

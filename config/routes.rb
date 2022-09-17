@@ -17,5 +17,6 @@ Rails.application.routes.draw do
       post 'toggle_favorite', to: "users#toggle_favorite"
     end
   end
+  get 'favorited_users', to: "users#index_favorited"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
