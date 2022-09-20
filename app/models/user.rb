@@ -1,5 +1,8 @@
 class User < ApplicationRecord
   has_many :user_instruments
+  has_many :instruments, through: :user_instruments
+  has_many :user_music_styles, dependent: :destroy
+  has_many :music_styles, through: :user_music_styles
   has_many :user_songs
   has_many :messages
   has_many :chatrooms, through: :messages

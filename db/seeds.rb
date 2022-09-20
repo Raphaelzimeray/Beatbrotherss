@@ -8,40 +8,84 @@
 require 'faker'
 
 puts "Cleaning database..."
+UserMusicStyle.destroy_all
+MusicStyle.destroy_all
 User.destroy_all
 
+puts "Creating music styles..."
+music_styles = ['Classical',
+  'Blues',
+  'Country',
+  'Electronic',
+  'EDM',
+  'House',
+  'Techno',
+  'Folk',
+  'Rap',
+  'Hip-Hop',
+  'Jazz',
+  'Pop',
+  'Rock',
+  'Classic Rock',
+  'Progressive Rock',
+  'Hard Rock',
+  'Metal',
+  'Punk']
+music_styles.each do |style|
+  MusicStyle.create!(name: style)
+end
+
 puts "Creating users..."
-user1 = User.new(
-  name: Faker::Name.first_name,
-  surname: Faker::Name.last_name,
-  email: Faker::Internet.email,
-  password: Faker::Barcode.ean(8),
-  birth_date: Faker::Date.birthday,
-  address: "#{Faker::Address.street_name} #{Faker::Address.city}",
-  latitude: Faker::Address.latitude,
-  longitude: Faker::Address.longitude,
-  description: Faker::GreekPhilosophers.quote,
-  music_style: ["Electro", "Rock", "Metal"],
+admin = User.new(
+  name: "Lorem",
+  surname: "Test",
+  email: "test@test.fr",
+  password: "123456",
+  birth_date: "07/05/1990",
+  address: "17 rue du Louvre, 75001 Paris",
+  latitude: 48.86427654238201,
+  longitude: 2.3423347492955915,
+  description: "I'm the boss !",
   goal: "superstar",
-  experience_in_years: Faker::Number.within(range: 1..50),
-  number_of_concerts: Faker::Number.within(range: 1..10),
-  disponibility: "Every day, all day",
-  avatar_url: Faker::Avatar.image(slug: Faker::Name.first_name, size: "360x360", format: "jpg")
+  experience_in_years: "7",
+  number_of_concerts: "3",
+  disponibility: "1 day per week",
+  avatar_url: "https://placeimg.com/600/300/people"
+)
+admin.save!
+puts "-> #{admin.name} has been created"
+
+user1 = User.new(
+
+  name: "Matthis",
+  surname: "Savagnac",
+  email: "matthis@test.fr",
+  password: "123456",
+  birth_date: "07/05/1990",
+  address: "17 rue du Louvre, 75001 Paris",
+  latitude: 48.86427654238201,
+  longitude: 2.3423347492955915,
+  description: "I'm the boss !",
+  goal: "superstar",
+  experience_in_years: "7",
+  number_of_concerts: "3",
+  disponibility: "1 day per week",
+  avatar_url: "https://placeimg.com/600/300/people"
 )
 user1.save!
 puts "-> #{user1.name} has been created"
 
 user2 = User.new(
-  name: Faker::Name.first_name,
-  surname: Faker::Name.last_name,
-  email: Faker::Internet.email,
-  password: Faker::Barcode.ean(8),
-  birth_date: Faker::Date.birthday,
-  address: "#{Faker::Address.street_name} #{Faker::Address.city}",
-  latitude: Faker::Address.latitude,
-  longitude: Faker::Address.longitude,
-  description: Faker::GreekPhilosophers.quote,
-  music_style: ["Classical", "Electro"],
+
+  name: "Fabrice",
+  surname: "Sauvion",
+  email: "fabrice@gmail.fr",
+  password: "123456",
+  birth_date: "16/03/1967",
+  address: "5 Rue Curial, 75019 Paris",
+  latitude: 48.893266460975724,
+  longitude: 2.3729876233375475,
+  description: "I'm looking for a musician",
   goal: "superstar",
   experience_in_years: Faker::Number.within(range: 1..50),
   number_of_concerts: Faker::Number.within(range: 1..10),
@@ -52,16 +96,16 @@ user2.save!
 puts "-> #{user2.name} has been created"
 
 user3 = User.new(
-  name: Faker::Name.first_name,
-  surname: Faker::Name.last_name,
-  email: Faker::Internet.email,
-  password: Faker::Barcode.ean(8),
-  birth_date: Faker::Date.birthday,
-  address: "#{Faker::Address.street_name} #{Faker::Address.city}",
-  latitude: Faker::Address.latitude,
-  longitude: Faker::Address.longitude,
-  description: Faker::GreekPhilosophers.quote,
-  music_style: ["Rock", "Folk", "Pop"],
+
+  name: "Jeanne",
+  surname: "Blear",
+  email: "jeanne@gmail.fr",
+  password: "123456",
+  birth_date: "29/04/1997",
+  address: "25 Rue du Premier Film, 69008 Lyon",
+  latitude: 45.74562889267446,
+  longitude: 4.870968084131842,
+  description: "I love music and I will love meet other musician",
   goal: "superstar",
   experience_in_years: Faker::Number.within(range: 1..50),
   number_of_concerts: Faker::Number.within(range: 1..10),
@@ -81,7 +125,6 @@ user4 = User.new(
   latitude: Faker::Address.latitude,
   longitude: Faker::Address.longitude,
   description: Faker::GreekPhilosophers.quote,
-  music_style: ["Classical", "Folk", "Rock"],
   goal: "superstar",
   experience_in_years: Faker::Number.within(range: 1..50),
   number_of_concerts: Faker::Number.within(range: 1..10),
@@ -101,7 +144,6 @@ user5 = User.new(
   latitude: Faker::Address.latitude,
   longitude: Faker::Address.longitude,
   description: Faker::GreekPhilosophers.quote,
-  music_style: ["Country", "House", "Rock"],
   goal: "superstar",
   experience_in_years: Faker::Number.within(range: 1..50),
   number_of_concerts: Faker::Number.within(range: 1..10),
@@ -121,7 +163,6 @@ user6 = User.new(
   latitude: Faker::Address.latitude,
   longitude: Faker::Address.longitude,
   description: Faker::GreekPhilosophers.quote,
-  music_style: ["Hard Rock", "Metal", "Punk"],
   goal: "superstar",
   experience_in_years: Faker::Number.within(range: 1..50),
   number_of_concerts: Faker::Number.within(range: 1..10),
@@ -141,7 +182,6 @@ user7 = User.new(
   latitude: Faker::Address.latitude,
   longitude: Faker::Address.longitude,
   description: Faker::GreekPhilosophers.quote,
-  music_style: ["Progressive Rock", "Techno", "Classical"],
   goal: "superstar",
   experience_in_years: Faker::Number.within(range: 1..50),
   number_of_concerts: Faker::Number.within(range: 1..10),
@@ -161,7 +201,6 @@ user8 = User.new(
   latitude: Faker::Address.latitude,
   longitude: Faker::Address.longitude,
   description: Faker::GreekPhilosophers.quote,
-  music_style: ["Electronic"],
   goal: "superstar",
   experience_in_years: Faker::Number.within(range: 1..50),
   number_of_concerts: Faker::Number.within(range: 1..10),
@@ -181,7 +220,6 @@ user9 = User.new(
   latitude: Faker::Address.latitude,
   longitude: Faker::Address.longitude,
   description: Faker::GreekPhilosophers.quote,
-  music_style: ["Country", "Folk"],
   goal: "superstar",
   experience_in_years: Faker::Number.within(range: 1..50),
   number_of_concerts: Faker::Number.within(range: 1..10),
@@ -201,7 +239,6 @@ user10 = User.new(
   latitude: Faker::Address.latitude,
   longitude: Faker::Address.longitude,
   description: Faker::GreekPhilosophers.quote,
-  music_style: ["Rap", "Hip-Hop", "Blues"],
   goal: "superstar",
   experience_in_years: Faker::Number.within(range: 1..50),
   number_of_concerts: Faker::Number.within(range: 1..10),
@@ -221,7 +258,6 @@ user11 = User.new(
   latitude: Faker::Address.latitude,
   longitude: Faker::Address.longitude,
   description: Faker::GreekPhilosophers.quote,
-  music_style: ["Classical", "Folk", "Rock"],
   goal: "superstar",
   experience_in_years: Faker::Number.within(range: 1..50),
   number_of_concerts: Faker::Number.within(range: 1..10),
@@ -241,7 +277,6 @@ user12 = User.new(
   latitude: Faker::Address.latitude,
   longitude: Faker::Address.longitude,
   description: Faker::GreekPhilosophers.quote,
-  music_style: ["Electronic", "Rock"],
   goal: "superstar",
   experience_in_years: Faker::Number.within(range: 1..50),
   number_of_concerts: Faker::Number.within(range: 1..10),
@@ -261,7 +296,6 @@ user13 = User.new(
   latitude: Faker::Address.latitude,
   longitude: Faker::Address.longitude,
   description: Faker::GreekPhilosophers.quote,
-  music_style: ["Rock"],
   goal: "superstar",
   experience_in_years: Faker::Number.within(range: 1..50),
   number_of_concerts: Faker::Number.within(range: 1..10),
@@ -281,7 +315,6 @@ user14 = User.new(
   latitude: Faker::Address.latitude,
   longitude: Faker::Address.longitude,
   description: Faker::GreekPhilosophers.quote,
-  music_style: ["Classic Rock", "Punk"],
   goal: "superstar",
   experience_in_years: Faker::Number.within(range: 1..50),
   number_of_concerts: Faker::Number.within(range: 1..10),
@@ -301,7 +334,6 @@ user15 = User.new(
   latitude: Faker::Address.latitude,
   longitude: Faker::Address.longitude,
   description: Faker::GreekPhilosophers.quote,
-  music_style: ["Punk", "Country", "Rap"],
   goal: "superstar",
   experience_in_years: Faker::Number.within(range: 1..50),
   number_of_concerts: Faker::Number.within(range: 1..10),
@@ -321,7 +353,6 @@ user16 = User.new(
   latitude: Faker::Address.latitude,
   longitude: Faker::Address.longitude,
   description: Faker::GreekPhilosophers.quote,
-  music_style: ["Classical", "Rock"],
   goal: "superstar",
   experience_in_years: Faker::Number.within(range: 1..50),
   number_of_concerts: Faker::Number.within(range: 1..10),
@@ -341,7 +372,6 @@ user17 = User.new(
   latitude: Faker::Address.latitude,
   longitude: Faker::Address.longitude,
   description: Faker::GreekPhilosophers.quote,
-  music_style: ["Electronic", "Rock"],
   goal: "superstar",
   experience_in_years: Faker::Number.within(range: 1..50),
   number_of_concerts: Faker::Number.within(range: 1..10),
@@ -361,7 +391,6 @@ user18 = User.new(
   latitude: Faker::Address.latitude,
   longitude: Faker::Address.longitude,
   description: Faker::GreekPhilosophers.quote,
-  music_style: ["Pop", "Rock"],
   goal: "superstar",
   experience_in_years: Faker::Number.within(range: 1..50),
   number_of_concerts: Faker::Number.within(range: 1..10),
@@ -381,7 +410,6 @@ user19 = User.new(
   latitude: Faker::Address.latitude,
   longitude: Faker::Address.longitude,
   description: Faker::GreekPhilosophers.quote,
-  music_style: ["Rap", "Hip-Hop"],
   goal: "superstar",
   experience_in_years: Faker::Number.within(range: 1..50),
   number_of_concerts: Faker::Number.within(range: 1..10),
@@ -401,7 +429,6 @@ user20 = User.new(
   latitude: Faker::Address.latitude,
   longitude: Faker::Address.longitude,
   description: Faker::GreekPhilosophers.quote,
-  music_style: ["EDM", "House", "Techno"],
   goal: "superstar",
   experience_in_years: Faker::Number.within(range: 1..50),
   number_of_concerts: Faker::Number.within(range: 1..10),
@@ -412,3 +439,12 @@ user20.save!
 puts "-> #{user20.name} has been created"
 
 puts "Finished!"
+
+User.all.each do |user|
+  # (rand(1..3).round).times do |i|
+    styles = MusicStyle.pluck(:id).sample(1).uniq
+    styles.each do |s|
+      UserMusicStyle.create!(user_id: user.id, music_style_id: s)
+    end
+  # end
+end
