@@ -1,20 +1,13 @@
-<div class="show-user">
 <h1>BeatBrothers</h1>
-
-<p>User, meet <%= @user.name %> </p>
-
-<%= image_tag @user.avatar_url, id:"ringo-img"%>
-
-<h2> <%= @user.name%> <%= @user.birth_date %></h2>
-
-
-<p> Drummer, singer </p>
-
-<p> <%= @user.description %> </p>
-
- <p> <%= @user.disponibility %></p>
-
-  <%= link_to "/chatrooms" do %>
-    <button type="button" class="btn btn-dark">Contact me</button>
-  <% end %>
+<br>
+<div class="card mb-3">
+  <%= image_tag @user.avatar_url, id:"user-img"%>
+  <div class="card-body">
+    <h5 class="card-title"> <%= @user.name%> - Born in <%= @user.birth_date.year %> </h5>
+    <p class="card-text"> <%= @user.description %> </p>
+    <p class="card-text"><small class="text-muted"> <%= @user.disponibility %> </small></p>
+    <%= link_to "/chatrooms" do %>
+      <button type="button" class="btn btn-dark">Contact me</button>
+    <% end %>
+  </div>
 </div>
