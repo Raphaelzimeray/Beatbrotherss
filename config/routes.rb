@@ -9,6 +9,10 @@ Rails.application.routes.draw do
     resources :user_songs
     resources :user_instruments, only: [:new, :create, :edit, :update, :destroy]
   end
+  resources :chatrooms, only: :index
+  resources :chatrooms, only: :show do
+    resources :messages, only: :create
+  end
 
   resources :users, only: :index do
     member do

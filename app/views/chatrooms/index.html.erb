@@ -1,0 +1,16 @@
+<h1>Messages</h1>
+<p>in each person is hiring a musician!</p>
+
+<div class="chatrooms">
+  <% @chatrooms.each do |chatroom| %>
+    <%= link_to chatroom_path(chatroom) do %>
+      <div class="chatroom-card">
+        <%= image_tag chatroom.chatroom_buddy(current_user).avatar_url, class: "chatroom-card-avatar" %>
+        <div class="chatroom-card-content">
+          <p class="chatroom-card-content-name"><%= chatroom.chatroom_buddy(current_user).name %></p>
+          <p class="chatroom-card-content-message"><%= chatroom.messages.last.content.truncate(25) %></p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
