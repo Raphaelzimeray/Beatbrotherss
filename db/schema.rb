@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_15_184339) do
+ActiveRecord::Schema.define(version: 2022_09_17_090623) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +57,12 @@ ActiveRecord::Schema.define(version: 2022_09_15_184339) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
+  create_table "music_styles", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "user_instruments", force: :cascade do |t|
     t.string "level"
     t.bigint "user_id", null: false
@@ -64,6 +71,15 @@ ActiveRecord::Schema.define(version: 2022_09_15_184339) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["instrument_id"], name: "index_user_instruments_on_instrument_id"
     t.index ["user_id"], name: "index_user_instruments_on_user_id"
+  end
+
+  create_table "user_music_styles", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "music_style_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["music_style_id"], name: "index_user_music_styles_on_music_style_id"
+    t.index ["user_id"], name: "index_user_music_styles_on_user_id"
   end
 
   create_table "user_songs", force: :cascade do |t|
@@ -91,7 +107,6 @@ ActiveRecord::Schema.define(version: 2022_09_15_184339) do
     t.float "latitude"
     t.float "longitude"
     t.text "description"
-    t.string "music_style"
     t.string "goal"
     t.integer "experience_in_years"
     t.integer "number_of_concerts"

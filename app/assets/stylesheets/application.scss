@@ -13,7 +13,7 @@
 @import "pages/show_user";
 
 .default-background {
-  background-image: linear-gradient(to right, #fc5c7d, #6a82fb);
+  background-image: linear-gradient(to left, #fc5c7d, #6a82fb);
 }
 
 .show-background {
@@ -21,8 +21,7 @@
 }
 
 .container {
-  padding-left: 11%;
-  padding-right: 11%;
+
 }
 
 a {
