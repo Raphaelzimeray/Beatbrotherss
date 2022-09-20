@@ -438,6 +438,12 @@ user20 = User.new(
 user20.save!
 puts "-> #{user20.name} has been created"
 
+puts "creating Chatrooms..."
+
+Chatroom.create!(name: "Conversation")
+Message.create!(content: "Hi, I love your music ! :)", chatroom_id: Chatroom.first.id, user_id: admin.id)
+Message.create!(content: "Thanks, I just listened to yours and love it aswell ! 🔥", chatroom_id: Chatroom.first.id, user_id: user2.id)
+
 puts "Finished!"
 
 User.all.each do |user|
