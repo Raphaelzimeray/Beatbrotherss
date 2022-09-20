@@ -15,13 +15,15 @@
     <div class="card-body end">
       <div class="row justify-content-evenly">
         <div class="love-hate-button col-4">
-          <%= link_to toggle_favorite_user_path(user), remote: true, method: :post do %>
-                <i class="fa-solid fa-xmark"></i>
+          <%= link_to "#", remote: true, method: :post do %>
+                <i class="fa-solid fa-heart"></i>
           <% end %>
         </div>
         <div class="love-hate-button col-4">
-          <%= link_to toggle_favorite_user_path(user), remote: true, method: :post do %>
-                <i class="fa-solid fa-heart"></i>
+          <%= link_to "#", remote: true, method: :post do %>
+                <i class="fa-solid fa-xmark"></i>
+
+        
           <% end %>
         </div>
       </div>
