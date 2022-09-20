@@ -13,7 +13,38 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    # users = User.all
+    # users.each do |user|
+    #   @user
+    # end
+    # récupérer tous les users filtrés en fonction des instruments
+    users_filtered = []
+    # current_user.music_styles.each do |current_style|
+    #   filter = []
+    #   filter = User.where(music_styles: {name:current_style.name} )
+    #   users_filtered << filter
+    # end
+
+    current_user.music_styles.each do |current_style|
+      filter = []
+      filter = User.where(music_styles: current_style )
+      users_filtered << filter
+    end
+    # User.all(music_styles[0].name = 'pop')
+    # Client.all(:music_styles => 'LEFT OUTER JOIN music_styles ON music_styles[0].name = "pop"')
+    # User.includes(:user_user_music_styles).where("music_styles[0].name = 'pop'").references(:music_styles)
+
+    # current_user.music_styles.each do |current_style|
+    #   filter = []
+    #   filter = User.where do
+    #     music_styles[0] = current_style
+    #   end
+    #   users_filtered << filter
+    # end
+
+    users_filtered.each do
+    # afficher le premier user de la liste
+    # renvoyer l'index de cet user
   end
 
   def show
