@@ -4,7 +4,9 @@
   <div class="card" style="width: 18rem;">
     <img src=" <%= user.avatar_url %> " class="card-img-top" alt="My profile pic">
     <div class="card-body start">
-      <h5 class="card-title"> <%= user.name %> </h5>
+      <%= link_to user_path(user) do %>
+        <h5 class="card-title"> <%= user.name %> </h5>
+      <% end %>
       <p class="card-text"> <%= user.description %> </p>
     </div>
     <ul class="list-group list-group-flush">
@@ -23,7 +25,7 @@
           <%= link_to "#", remote: true, method: :post do %>
                 <i class="fa-solid fa-xmark"></i>
 
-        
+
           <% end %>
         </div>
       </div>
