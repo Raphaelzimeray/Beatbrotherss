@@ -17,12 +17,12 @@
     <div class="card-body">
       <div class="row justify-content-evenly">
         <div class="love-hate-button col-4">
-          <%= link_to toggle_favorite_user_path(user), remote: true, method: :post do %>
+          <%= link_to "#", remote: true, method: :post do %>
                 <i class="fa-solid fa-heart"></i>
           <% end %>
         </div>
         <div class="love-hate-button col-4">
-          <%= link_to toggle_favorite_user_path(user), remote: true, method: :post do %>
+          <%= link_to "#", remote: true, method: :post do %>
                 <i class="fa-solid fa-xmark"></i>
           <% end %>
         </div>
@@ -31,13 +31,3 @@
   </div>
   <br>
 <% end %>
-
-<div class="col-xs-12 col-sm-6">
-  <h3>Liked Persons</h3>
-    <div class="favorites">
-      <% @favorite_users.each do |user| %>
-        <%= render 'user', user: user %>
-      <% end %>
-    </div>
-</div>
-
