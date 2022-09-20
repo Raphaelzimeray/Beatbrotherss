@@ -8,9 +8,9 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+    <%= favicon_link_tag asset_path('compact-disc-solid.svg') %>  </head>
 
-  <body>
+  <body class=<%= params[:controller] == "users" && params[:action] == "show" ? "show-background" : "default-background"%>>
 
     <div class="container">
 

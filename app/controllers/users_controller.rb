@@ -32,6 +32,10 @@ class UsersController < ApplicationController
     @user.destroy
   end
 
+  def parameters
+    @parameters = User.parameters
+  end
+  
   private
 
   def set_user
@@ -39,6 +43,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :surname, :avatar_url, :birth_date, :address, :latitude, :longitude, :mail_address, :password, :description, :music_style, :goal, :experience_in_years, :number_of_concerts, :disponibility)
+    params.require(:user).permit(:name, :surname, :avatar_url, :birth_date, :address, :latitude, :longitude, :mail_address, :password, :description, :music_style, :goal, :experience_in_years, :number_of_concerts, :disponibility, :id)
   end
 end

@@ -1,0 +1,38 @@
+.back-section {
+  margin-top: 9px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  background: white;
+  padding: 10px;
+  a {
+    color: black;
+  }
+}
+
+.chatroom {
+  background: white;
+  height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  .messages {
+    height: 100%;
+    overflow: scroll;
+    padding: 1rem;
+    div[id*="messages-"] {
+      margin-bottom: 5px;;
+    }
+  }
+  #new_message {
+    border-top: 1px solid $gray-200;
+    padding: 1rem;
+    align-items: center;
+    flex-direction: inherit;
+    .form-group {
+      margin-bottom: 0;
+    }
+    .message_content {
+      width: 100%;
+    }
+  }
+}

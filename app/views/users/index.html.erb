@@ -1,63 +1,31 @@
-<div class="purple">
-  <h1>Discover</h1>
+<br>
 
-  <p> In each person, a musician is hiding!</p>
-
-  <div class="swipe-card" style="background-image: url(https://alchetron.com/cdn/ringo-singer-37fe0034-effb-4596-a28c-b776a79f67c-resize-750.jpeg)">
-
-  </div>
-
-  <a href="" class="button-link">
-    <i class="fa-solid fa-heart"></i>
-    Add on my list
-  </a>
-
-  <a href="" class="button-link">
-    <i class="fa-solid fa-face-confused"></i>
-    Add on my list
-  </a>
-
-  <a href="" class="button-link">
-    <i class="fa-solid fa-heart"></i>
-    Add on my list
-  </a>
-</div>
-
-<div class="tinder">
-  <div class="tinder--status">
-    <i class="fa fa-remove"></i>
-    <i class="fa fa-heart"></i>
-  </div>
-
-  <div class="tinder--cards">
-      <div class="tinder--card">
-        <p><%= @instrument %></p>
+<% @users.each do |user| %>
+  <div class="card" style="width: 18rem;">
+    <img src=" <%= user.avatar_url %> " class="card-img-top" alt="My profile pic">
+    <div class="card-body start">
+      <h5 class="card-title"> <%= user.name %> </h5>
+      <p class="card-text"> <%= user.description %> </p>
+    </div>
+    <ul class="list-group list-group-flush">
+    <li class="list-group-item">I love : <%= user.music_style %></li>
+    <li class="list-group-item">I want to be a : <%= user.goal %></li>
+    <li class="list-group-item">My availability : <%= user.disponibility %></li>
+    </ul>
+    <div class="card-body end">
+      <div class="row justify-content-evenly">
+        <div class="love-hate-button col-4">
+          <%= link_to toggle_favorite_user_path(user), remote: true, method: :post do %>
+                <i class="fa-solid fa-xmark"></i>
+          <% end %>
+        </div>
+        <div class="love-hate-button col-4">
+          <%= link_to toggle_favorite_user_path(user), remote: true, method: :post do %>
+                <i class="fa-solid fa-heart"></i>
+          <% end %>
+        </div>
       </div>
-
-    <div class="tinder--card">
-      <img src="https://placeimg.com/600/300/animals">
-      <h3>Demo card 2</h3>
-      <p>This is a demo for Tinder like swipe cards</p>
-    </div>
-    <div class="tinder--card">
-      <img src="https://placeimg.com/600/300/nature">
-      <h3>Demo card 3</h3>
-      <p>This is a demo for Tinder like swipe cards</p>
-    </div>
-    <div class="tinder--card">
-      <img src="https://placeimg.com/600/300/tech">
-      <h3>Demo card 4</h3>
-      <p>This is a demo for Tinder like swipe cards</p>
-    </div>
-    <div class="tinder--card">
-      <img src="https://placeimg.com/600/300/arch">
-      <h3>Demo card 5</h3>
-      <p>This is a demo for Tinder like swipe cards</p>
     </div>
   </div>
-
-  <div class="tinder--buttons">
-    <button id="nope"><i class="fa fa-remove"></i></button>
-    <button id="love"><i class="fa fa-heart"></i></button>
-  </div>
-</div>
+  <br>
+<% end %>

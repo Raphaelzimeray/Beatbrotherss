@@ -1,0 +1,18 @@
+<div class="show-user">
+<h1>BeatBrothers</h1>
+
+<p>User, meet <%= @user.name %> </p>
+
+<%= image_tag @user.avatar_url, id:"ringo-img"%>
+
+<h2> <%= @user.name%> <%= @user.birth_date %></h2>
+
+
+<p> Drummer, singer </p>
+
+<p> <%= @user.description %> </p>
+
+ <p> <%= @user.disponibility %></p>
+
+ <button type="button" class="btn btn-dark">Contact me</button>
+</div>
