@@ -67,4 +67,6 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
 
 gem 'acts_as_favoritor'
 
-gem 'net-smtp'
+gem 'net-smtp', require: false
+
+gem 'net-pop', require: false
