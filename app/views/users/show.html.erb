@@ -14,5 +14,7 @@
 
  <p> <%= @user.disponibility %></p>
 
- <button type="button" class="btn btn-dark">Contact me</button>
+  <%= link_to "/chatrooms" do %>
+    <button type="button" class="btn btn-dark">Contact me</button>
+  <% end %>
 </div>
