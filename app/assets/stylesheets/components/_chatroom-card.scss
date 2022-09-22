@@ -1,12 +1,14 @@
 .chatrooms {
   background-color: rgba(255, 255, 255, 0.618);
   height: 80vh;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
   .chatroom-card {
     color: black;
     display: flex;
     background-color: white;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 8px;
     .chatroom-card-avatar {
       width: 60px;
       height: 60px;
@@ -17,11 +19,11 @@
       margin-left: 20px;
       .chatroom-card-content-name {
         font-size: 24px;
-        margin: 0; 
+        margin: 0;
       }
       .chatroom-card-content-message {
         font-size: 11px;
-        margin: 0; 
+        margin: 0;
       }
     }
   }
