@@ -3,10 +3,11 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: :toggle_favorite
 
-  # def toggle_favorite
-  #   @user = User.find(params[:id])
-  #   current_user.favorited?(@user) ? current_user.unfavorite(@user) : current_user.favorite(@user)
-  # end
+  def toggle_favorite
+    @user = User.find(params[:id])
+    current_user.favorite(@user)
+    # current_user.favorited?(@user) ? current_user.unfavorite(@user) : current_user.favorite(@user)
+  end
 
   def new
     @user = User.new
@@ -34,6 +35,11 @@ class UsersController < ApplicationController
     # raise
   end
 
+
+  def index_favorited
+    @favorited_users = current_user.all_favorites
+  end
+  
   def show
 
   end
