@@ -1,1 +1,8 @@
+<h1>Voici vos favoris</h1>
 
+<% @favorited_users.each do |user| %>
+
+  <%= user.name %>
+  <%= user.surname %>
+
+<% end %>
