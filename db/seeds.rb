@@ -9,6 +9,8 @@ require 'faker'
 
 puts "Cleaning database..."
 UserMusicStyle.destroy_all
+Chatroom.destroy_all
+Message.destroy_all
 MusicStyle.destroy_all
 User.destroy_all
 
@@ -39,7 +41,7 @@ puts "Creating users..."
 admin = User.new(
   name: "Lorem",
   surname: "Test",
-  email: "test@test.fr",
+  email: "test@test.frrr",
   password: "123456",
   birth_date: "07/05/1990",
   address: "17 rue du Louvre, 75001 Paris",
@@ -59,7 +61,7 @@ user1 = User.new(
 
   name: "Matthis",
   surname: "Savagnac",
-  email: "matthis@test.fr",
+  email: "matthis@test.frrr",
   password: "123456",
   birth_date: "07/05/1990",
   address: "17 rue du Louvre, 75001 Paris",
@@ -79,7 +81,7 @@ user2 = User.new(
 
   name: "Fabrice",
   surname: "Sauvion",
-  email: "fabrice@gmail.fr",
+  email: "fabrice@gmail.frrr",
   password: "123456",
   birth_date: "16/03/1967",
   address: "5 Rue Curial, 75019 Paris",
@@ -99,7 +101,7 @@ user3 = User.new(
 
   name: "Jeanne",
   surname: "Blear",
-  email: "jeanne@gmail.fr",
+  email: "jeanne@gmail.frrr",
   password: "123456",
   birth_date: "29/04/1997",
   address: "25 Rue du Premier Film, 69008 Lyon",
@@ -447,10 +449,10 @@ Message.create!(content: "Thanks, I just listened to yours and love it aswell ! 
 puts "Finished!"
 
 User.all.each do |user|
-  # (rand(1..3).round).times do |i|
+  (rand(2..3).round).times do |i|
     styles = MusicStyle.pluck(:id).sample(1).uniq
     styles.each do |s|
       UserMusicStyle.create!(user_id: user.id, music_style_id: s)
     end
-  # end
+  end
 end
