@@ -20,12 +20,19 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    # @users = User.all
+    # search = current_user.music_styles[0].name
+    # User.all.where(name: search)
+    users_filtered = []
+    current_user.music_styles.each do |current_style|
+      style = current_style.name
+      @filter = User.includes(:music_styles).where(music_styles: { name: style }).to_ary()
+      users_filtered << @filter
+    end
+    usersss = users_filtered[0] + users_filtered[1] + users_filtered[2]
+    @users = usersss.uniq
+    # raise
   end
-
-  # def index_favorited
-  #   @favorited_users = current_user.favorited_by_type('User')
-  # end
 
   def show
 
