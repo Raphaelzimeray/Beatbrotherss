@@ -1,5 +1,5 @@
 class Chatroom < ApplicationRecord
-  has_many :messages
+  has_many :messages, dependent: :destroy
 
   def chatroom_buddy(current_user)
     id = messages.pluck(:user_id).uniq.reject { |n| n == current_user.id }
