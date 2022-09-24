@@ -1,7 +1,7 @@
 <h1>BeatBrothers</h1>
 <br>
 <div class="card mb-3">
-  <%= image_tag @user.avatar_url, id:"user-img"%>
+  <%= cl_image_tag @user.avatar_url.first.key, id:"user-img", width: 400, height: 300, class:"d-block w-100", crop: :fill %>
   <div class="card-body">
     <h5 class="card-title"> <%= @user.name%> - Born in <%= @user.birth_date.year %> </h5>
     <p class="card-text"> <%= @user.description %> </p>

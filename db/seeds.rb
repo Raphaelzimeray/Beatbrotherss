@@ -114,6 +114,7 @@ user3 = User.new(
   disponibility: "During the week-end",
   avatar_url: "https://placeimg.com/360/360/nature"
 )
+user3.avatar_url.attach(io: File.open('app/assets/images/ringo.jpeg'), filename: 'ringo.jpeg')
 user3.save!
 puts "-> #{user3.name} has been created"
 

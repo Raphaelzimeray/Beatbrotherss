@@ -72,3 +72,6 @@ gem 'net-smtp', require: false
 gem 'net-pop', require: false
 
 gem 'net-imap', require: false
+
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'cloudinary', '~> 1.16.0'
