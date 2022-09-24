@@ -8,9 +8,19 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= favicon_link_tag asset_path('compact-disc-solid.svg') %>  </head>
+    <%= favicon_link_tag asset_path('sigle_sans_fond.png') %>
+  </head>
 
   <body class=<%= params[:controller] == "users" && params[:action] == "show" ? "show-background" : "default-background"%>>
+
+    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+      <div class="container-fluid">
+        <%= link_to "#", class: "navbar-brand" do %>
+        <%= image_tag("logo_sans_fond.png") %>
+        <% end %>
+      </div>
+    </div>
+
 
     <div class="container">
 

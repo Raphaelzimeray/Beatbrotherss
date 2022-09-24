@@ -5,3 +5,15 @@
   width: 100%;
   color: rgba(0,0,0,0.3);
 }
+
+.navbar-lewagon {
+  justify-content: space-between;
+  background-image: linear-gradient(to bottom, #000000c7 0%, #000000ed 100%);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  margin-left: -20px;
+  padding: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 240px;
+}
