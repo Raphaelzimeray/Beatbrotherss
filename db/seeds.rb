@@ -41,7 +41,7 @@ puts "Creating users..."
 admin = User.new(
   name: "Lorem",
   surname: "Test",
-  email: "test@test.frrr",
+  email: "test@test.fr",
   password: "123456",
   birth_date: "07/05/1990",
   address: "17 rue du Louvre, 75001 Paris",
@@ -61,7 +61,7 @@ user1 = User.new(
 
   name: "Matthis",
   surname: "Savagnac",
-  email: "matthis@test.frrr",
+  email: "matthis@test.fr",
   password: "123456",
   birth_date: "07/05/1990",
   address: "17 rue du Louvre, 75001 Paris",
@@ -81,7 +81,7 @@ user2 = User.new(
 
   name: "Fabrice",
   surname: "Sauvion",
-  email: "fabrice@gmail.frrr",
+  email: "fabrice@gmail.fr",
   password: "123456",
   birth_date: "16/03/1967",
   address: "5 Rue Curial, 75019 Paris",
@@ -101,7 +101,7 @@ user3 = User.new(
 
   name: "Jeanne",
   surname: "Blear",
-  email: "jeanne@gmail.frrr",
+  email: "jeanne@gmail.fr",
   password: "123456",
   birth_date: "29/04/1997",
   address: "25 Rue du Premier Film, 69008 Lyon",
