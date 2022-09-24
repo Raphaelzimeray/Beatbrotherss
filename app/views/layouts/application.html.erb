@@ -27,7 +27,7 @@
       <%= yield %>
 
     </div>
-    <%= render "shared/navbar" %>
+    <%= render "shared/navbar" if current_user %>
 
   </body>
 </html>

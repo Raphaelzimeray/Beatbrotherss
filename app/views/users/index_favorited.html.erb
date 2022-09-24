@@ -1,1 +1,12 @@
+<h1>Voici vos favoris</h1>
 
+<% @favorited_users.each do |favorite| %>
+  <ul>
+    <li>
+    <%= link_to user_path(favorite.favoritable) do %>
+      <%= favorite.favoritable.name %>
+      <%= favorite.favoritable.surname %>
+    <% end %>
+    </li>
+  </ul>
+<% end %>
