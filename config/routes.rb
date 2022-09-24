@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     end
     resources :user_songs
     resources :user_instruments, only: [:new, :create, :edit, :update, :destroy]
+    resources :user_chatrooms, only: [:create]
   end
   resources :chatrooms, only: :index
   resources :chatrooms, only: :show do

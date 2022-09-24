@@ -1,0 +1,18 @@
+.message-current-user {
+  display: flex;
+  justify-content: end;
+  text-align: end;
+  p {
+    background-color: rgba(106, 130, 251, 0.5);
+    border-radius: 15px;
+    width: 200px;
+    padding-right: 10px;;
+  }
+}
+
+.message-other-user p {
+  background-color: rgba(252, 92, 125, 0.5);
+  border-radius: 15px;
+  width: 200px;
+  padding-left: 10px;
+}

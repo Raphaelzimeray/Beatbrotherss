@@ -6,8 +6,15 @@
     <h5 class="card-title"> <%= @user.name%> - Born in <%= @user.birth_date.year %> </h5>
     <p class="card-text"> <%= @user.description %> </p>
     <p class="card-text"><small class="text-muted"> <%= @user.disponibility %> </small></p>
-    <%= link_to "/chatrooms" do %>
-      <button type="button" class="btn btn-dark">Contact me</button>
+
+    <% if current_user.already_in_chatroom?(@user, current_user) %>
+      <%= link_to chatroom_path(current_user.common_chatroom(@user, current_user)) do %>
+        <button type="button" class="btn btn-dark">Contact me</button>
+      <% end %>
+    <% else %>
+      <%= link_to user_user_chatrooms_path(@user), method: :post do %>
+        <button type="button" class="btn btn-dark">Contact me</button>
+      <% end %>
     <% end %>
   </div>
 </div>
