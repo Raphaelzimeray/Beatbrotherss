@@ -39,7 +39,7 @@ class UsersController < ApplicationController
   def index_favorited
     @favorited_users = current_user.all_favorites
   end
-  
+
   def show
 
   end
@@ -57,6 +57,7 @@ class UsersController < ApplicationController
   end
 
   def parameters
+    @user_song = UserSong.new
     @parameters = User.parameters
   end
 
