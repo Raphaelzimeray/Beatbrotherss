@@ -17,7 +17,7 @@ class UserSongsController < ApplicationController
     @user_song = UserSong.new(user_song_params)
     @user_song.user_id = current_user.id
     if @user_song.save
-      redirect_to user_path(@user)
+      redirect_to user_path(current_user)
     else
       render :new
     end
@@ -36,7 +36,7 @@ class UserSongsController < ApplicationController
   private
 
   def user_song_params
-    user_song.require(:user_song).permit(:title, :url, :category)
+    params.require(:user_song).permit(:title, :url, :category)
   end
 
 end

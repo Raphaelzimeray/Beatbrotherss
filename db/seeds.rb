@@ -61,7 +61,7 @@ user1 = User.new(
 
   name: "Matthis",
   surname: "Savagnac",
-  email: "matthis@test.fr",
+  email: "matthis@testt.fr",
   password: "123456",
   birth_date: "07/05/1990",
   address: "17 rue du Louvre, 75001 Paris",
