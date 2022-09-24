@@ -1,33 +1,34 @@
-<br>
 
-<% @users.each do |user| %>
-  <div class="card" style="width: 18rem;">
-    <%= link_to user_path(user) do %>
-    <img src=" <%= user.avatar_url %> " class="card-img-top" alt="My profile pic">
-    <div class="card-body start">
-        <h5 class="card-title"> <%= user.name %> </h5>
-    <% end %>
-      <p class="card-text"> <%= user.description %> </p>
-    </div>
-    <ul class="list-group list-group-flush">
-    <li class="list-group-item">I love : <%= user.music_styles[0].name %></li>
-    <li class="list-group-item">I want to be a : <%= user.goal %></li>
-    <li class="list-group-item">My availability : <%= user.disponibility %></li>
-    </ul>
-    <div class="card-body end">
-      <div class="row justify-content-evenly">
-        <div class="love-hate-button col-4">
-          <%= link_to "#", remote: true, method: :post do %>
-                <i class="fa-solid fa-xmark"></i>
-          <% end %>
-        </div>
-        <div class="love-hate-button col-4">
-           <%= link_to  toggle_favorite_user_path(user), remote: true, method: :post do %>
-                <i class="fa-solid fa-heart"></i>
-          <% end %>
-        </div>
-      </div>
-    </div>
+<div class="tinder">
+  <div class="tinder--status">
+    <i class="fa fa-remove"></i>
+    <i class="fa fa-heart"></i>
   </div>
-  <br>
-<% end %>
+
+  <div class="tinder--cards">
+    <% @users.each do |user| %>
+      <div class="tinder--card">
+        <%= link_to user_path(user) do %>
+          <img src=" <%= user.avatar_url %> " alt="My profile pic">
+          <div class="card-body start">
+            <h3 class="card-title"> <%= user.name %> </h3>
+            <% end %>
+            <br>
+          </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><i><h4> <%= user.description %> </h4></i></li>
+          <li class="list-group-item">I'm into : <%= user.music_styles[0].name %></li>
+          <li class="list-group-item">I want to be a : <%= user.goal.capitalize %></li>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="tinder--buttons">
+    <button id="nope"><i class="fa fa-remove"></i></button>
+    <button id="love"><i class="fa fa-heart"></i></button>
+  </div>
+</div>
+
+
+<%= javascript_pack_tag 'usercards'%>

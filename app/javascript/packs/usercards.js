@@ -1,14 +1,12 @@
-'use strict';
+import * as Hammer from "hammerjs";
 
-// const tinderContainer = document.querySelector('.tinder');
-const allCards = document.querySelectorAll('.tinder--card');
-const nope = document.getElementById('nope');
-const love = document.getElementById('love');
+var tinderContainer = document.querySelector('.tinder');
+var allCards = document.querySelectorAll('.tinder--card');
+var nope = document.getElementById('nope');
+var love = document.getElementById('love');
 
 function initCards(card, index) {
-  const tinderContainer = document.querySelector('.tinder');
-  console.log(tinderContainer);
-  const newCards = document.querySelectorAll('.tinder--card:not(.removed)');
+  var newCards = document.querySelectorAll('.tinder--card:not(.removed)');
 
   newCards.forEach(function (card, index) {
     card.style.zIndex = allCards.length - index;
@@ -22,7 +20,7 @@ function initCards(card, index) {
 initCards();
 
 allCards.forEach(function (el) {
-  const hammertime = new Hammer(el);
+  var hammertime = new Hammer(el);
 
   hammertime.on('pan', function (event) {
     el.classList.add('moving');
@@ -35,9 +33,9 @@ allCards.forEach(function (el) {
     tinderContainer.classList.toggle('tinder_love', event.deltaX > 0);
     tinderContainer.classList.toggle('tinder_nope', event.deltaX < 0);
 
-    const xMulti = event.deltaX * 0.03;
-    const yMulti = event.deltaY / 80;
-    const rotate = xMulti * yMulti;
+    var xMulti = event.deltaX * 0.03;
+    var yMulti = event.deltaY / 80;
+    var rotate = xMulti * yMulti;
 
     event.target.style.transform = 'translate(' + event.deltaX + 'px, ' + event.deltaY + 'px) rotate(' + rotate + 'deg)';
   });
@@ -47,21 +45,21 @@ allCards.forEach(function (el) {
     tinderContainer.classList.remove('tinder_love');
     tinderContainer.classList.remove('tinder_nope');
 
-    const moveOutWidth = document.body.clientWidth;
-    const keep = Math.abs(event.deltaX) < 80 || Math.abs(event.velocityX) < 0.5;
+    var moveOutWidth = document.body.clientWidth;
+    var keep = Math.abs(event.deltaX) < 80 || Math.abs(event.velocityX) < 0.5;
 
     event.target.classList.toggle('removed', !keep);
 
     if (keep) {
       event.target.style.transform = '';
     } else {
-      const endX = Math.max(Math.abs(event.velocityX) * moveOutWidth, moveOutWidth);
-      const toX = event.deltaX > 0 ? endX : -endX;
-      const endY = Math.abs(event.velocityY) * moveOutWidth;
-      const toY = event.deltaY > 0 ? endY : -endY;
-      const xMulti = event.deltaX * 0.03;
-      const yMulti = event.deltaY / 80;
-      const rotate = xMulti * yMulti;
+      var endX = Math.max(Math.abs(event.velocityX) * moveOutWidth, moveOutWidth);
+      var toX = event.deltaX > 0 ? endX : -endX;
+      var endY = Math.abs(event.velocityY) * moveOutWidth;
+      var toY = event.deltaY > 0 ? endY : -endY;
+      var xMulti = event.deltaX * 0.03;
+      var yMulti = event.deltaY / 80;
+      var rotate = xMulti * yMulti;
 
       event.target.style.transform = 'translate(' + toX + 'px, ' + (toY + event.deltaY) + 'px) rotate(' + rotate + 'deg)';
       initCards();
@@ -71,12 +69,15 @@ allCards.forEach(function (el) {
 
 function createButtonListener(love) {
   return function (event) {
-    const cards = document.querySelectorAll('.tinder--card:not(.removed)');
-    const moveOutWidth = document.body.clientWidth * 1.5;
+    var cards = document.querySelectorAll('.tinder--card:not(.removed)');
+    var moveOutWidth = document.body.clientWidth * 1.5;
 
-    if (!cards.length) return false;
+    if (!cards.length) {
+      console.log("hello")
+      return false
+    };
 
-    const card = cards[0];
+    var card = cards[0];
 
     card.classList.add('removed');
 
@@ -92,8 +93,11 @@ function createButtonListener(love) {
   };
 }
 
-const nopeListener = createButtonListener(false);
-const loveListener = createButtonListener(true);
+var nopeListener = createButtonListener(false);
+var loveListener = createButtonListener(true);
 
 nope.addEventListener('click', nopeListener);
 love.addEventListener('click', loveListener);
+
+export { createButtonListener };
+export { initCards };

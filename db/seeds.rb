@@ -52,7 +52,7 @@ admin = User.new(
   experience_in_years: "7",
   number_of_concerts: "3",
   disponibility: "1 day per week",
-  avatar_url: "https://placeimg.com/600/300/people"
+  avatar_url: "https://placeimg.com/360/360/animals"
 )
 admin.save!
 puts "-> #{admin.name} has been created"
@@ -72,7 +72,7 @@ user1 = User.new(
   experience_in_years: "7",
   number_of_concerts: "3",
   disponibility: "1 day per week",
-  avatar_url: "https://placeimg.com/600/300/people"
+  avatar_url: "https://placeimg.com/360/360/arch"
 )
 user1.save!
 puts "-> #{user1.name} has been created"
@@ -92,7 +92,7 @@ user2 = User.new(
   experience_in_years: Faker::Number.within(range: 1..50),
   number_of_concerts: Faker::Number.within(range: 1..10),
   disponibility: "Monday and Wednesday nights",
-  avatar_url: Faker::Avatar.image(slug: Faker::Name.first_name, size: "360x360", format: "jpg")
+  avatar_url: "https://placeimg.com/360/360/nature"
 )
 user2.save!
 puts "-> #{user2.name} has been created"
@@ -112,7 +112,7 @@ user3 = User.new(
   experience_in_years: Faker::Number.within(range: 1..50),
   number_of_concerts: Faker::Number.within(range: 1..10),
   disponibility: "During the week-end",
-  avatar_url: Faker::Avatar.image(slug: Faker::Name.first_name, size: "360x360", format: "jpg")
+  avatar_url: "https://placeimg.com/360/360/nature"
 )
 user3.save!
 puts "-> #{user3.name} has been created"
@@ -131,7 +131,7 @@ user4 = User.new(
   experience_in_years: Faker::Number.within(range: 1..50),
   number_of_concerts: Faker::Number.within(range: 1..10),
   disponibility: "During the week-end",
-  avatar_url: Faker::Avatar.image(slug: Faker::Name.first_name, size: "360x360", format: "jpg")
+  avatar_url: "https://placeimg.com/360/360/tech"
 )
 user4.save!
 puts "-> #{user4.name} has been created"
