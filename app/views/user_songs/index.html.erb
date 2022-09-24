@@ -1,3 +1,7 @@
-<h1> <%= @user_song.title %></h1>
-<h2>Category: <%= @user_song.category %></h2>
-<button> <%= link_to "Play song", @user_song.url, class: "html5" %></button>
+<% @user_songs.each do |song| %>
+<h1> <%= song.title %></h1>
+<h2>Category: <%= song.category %></h2>
+<audio controls>
+  <source src="<%= rails_blob_url(song.url) %>" type="<%= song.url.content_type %>"/>
+</audio>
+<% end %>

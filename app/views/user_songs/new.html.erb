@@ -1,6 +1,6 @@
 <h1>Upload a new song</h1>
 
-<%= form_for @user_song do |f| %>
+<%= form_for [@user, @user_song] do |f| %>
 <%= f.label :title %>
 <%= f.text_field :title %>
 <br>
