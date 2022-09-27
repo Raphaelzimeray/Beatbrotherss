@@ -1,3 +1,12 @@
+.card {
+  border-radius: 8px;
+  border: none;
+
+  img {
+    border-radius: 8px;
+  }
+}
+
 *, *:before, *:after {
   box-sizing: border-box;
   padding: 0;
@@ -74,7 +83,7 @@ body {
   background: #F2F5FE;
   padding-bottom: 8px;
   border-radius: 8px;
-  overflow: scroll;
+  overflow: hidden;
   position: absolute;
   will-change: transform;
   transition: all 0.3s ease-in-out;
@@ -149,6 +158,9 @@ body {
   vertical-align: middle;
 }
 
-.card-body {
-  margin-bottom: -16px;
+.btn-show-contact {
+  background-image: linear-gradient(to right, #6a82fb, #93efb3);
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
 }
