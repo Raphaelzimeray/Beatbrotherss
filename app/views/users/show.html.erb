@@ -1,13 +1,17 @@
-<h1>BeatBrothers</h1>
 <br>
 <div class="card mb-3">
   <%= image_tag @user.avatar_url, id:"user-img"%>
   <div class="card-body">
-    <h5 class="card-title"> <%= @user.name%> - Born in <%= @user.birth_date.year %> </h5>
-    <p class="card-text"> <%= @user.description %> </p>
-    <p class="card-text"><small class="text-muted"> <%= @user.disponibility %> </small></p>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><i><h4> <%= @user.description %> </h4></i></li>
+          <li class="list-group-item">I'm into : <%= @user.music_styles[0].name %></li>
+          <li class="list-group-item">I want to be a : <%= @user.goal.capitalize %></li>
+          <li class="list-group-item">I've been playing for : <%= @user.experience_in_years %> years</li>
+        </ul>
+        <br>
     <%= link_to "/chatrooms" do %>
-      <button type="button" class="btn btn-dark">Contact me</button>
+      <button type="button" class=".btn btn-show-contact">Contact me</button>
     <% end %>
+    <br>
   </div>
 </div>
