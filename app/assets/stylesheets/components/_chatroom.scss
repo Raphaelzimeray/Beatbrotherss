@@ -13,7 +13,7 @@
 
 .chatroom {
   background: white;
-  height: calc(100vh - 120px);
+  height: calc(100vh - 180px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -40,6 +40,9 @@
     }
     .message_content {
       width: 100%;
+    }
+    .btn-chatroom {
+      background-image: linear-gradient(to right, rgba(252, 92, 125, 0.7), rgba(106, 130, 251, 0.7));
     }
   }
 }
