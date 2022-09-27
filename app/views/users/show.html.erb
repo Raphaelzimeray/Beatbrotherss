@@ -2,6 +2,7 @@
 <div class="card mb-3">
   <%= image_tag @user.avatar_url, id:"user-img"%>
   <div class="card-body">
+      <h2><%= @user.name %> </h2>
         <ul class="list-group list-group-flush">
           <li class="list-group-item"><i><h4> <%= @user.description %> </h4></i></li>
           <li class="list-group-item">I'm into : <%= @user.music_styles[0].name %></li>
