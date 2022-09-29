@@ -1,6 +1,6 @@
 <br>
 <div class="card mb-3">
-  <%= image_tag @user.avatar_url, id:"user-img"%>
+  <%= cl_image_tag @user.photos.first.key, height: 300, width: 400, crop: :fill %>
   <div class="card-body">
       <h2><%= @user.name %> </h2>
         <ul class="list-group list-group-flush">

@@ -1,11 +1,12 @@
 class User < ApplicationRecord
-  has_many :user_instruments
+  has_many :user_instruments, dependent: :destroy
   has_many :instruments, through: :user_instruments
   has_many :user_music_styles, dependent: :destroy
   has_many :music_styles, through: :user_music_styles
-  has_many :user_songs
+  has_many :user_songs, dependent: :destroy
   has_many :messages, dependent: :destroy
   has_many :chatrooms, through: :messages
+  has_many_attached :photos
   has_many :user_chatrooms, dependent: :destroy
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
