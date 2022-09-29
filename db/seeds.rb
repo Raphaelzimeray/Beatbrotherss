@@ -64,7 +64,7 @@ instru_winds = ['Recorder flute',
 end
 
 instru_percussions = ['Xylophone',
-  'Battery']
+  'Drums']
   instru_percussions.each do |instrument|
   Instrument.create!(name: instrument, category: 'Percussion')
 end
