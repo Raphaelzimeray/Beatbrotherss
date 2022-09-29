@@ -38,6 +38,39 @@ music_styles.each do |style|
   MusicStyle.create!(name: style)
 end
 
+puts "Creating instruments..."
+instru_strings = ['Violin',
+  'Alto',
+  'Cello',
+  'Bass',
+  'Guitar',
+  'Harp',
+  'Harpsichord',
+  'Piano']
+  instru_strings.each do |instrument|
+  Instrument.create!(name: instrument, category: 'String instruments')
+end
+
+instru_winds = ['Recorder flute',
+  'Transverse flute',
+  'Clarinet',
+  'Saxophone',
+  'Trumpet',
+  'Trombone',
+  'Tuba',
+  'Organ']
+  instru_winds.each do |instrument|
+  Instrument.create!(name: instrument, category: 'Wind instruments')
+end
+
+instru_percussions = ['Xylophone',
+  'Battery']
+  instru_percussions.each do |instrument|
+  Instrument.create!(name: instrument, category: 'Percussion')
+end
+
+Instrument.create!(name: 'Singing', category: 'Vocal')
+
 puts "Creating users..."
 admin = User.new(
   name: "Lorem",
@@ -454,6 +487,17 @@ User.all.each do |user|
     styles = MusicStyle.pluck(:id).sample(1).uniq
     styles.each do |s|
       UserMusicStyle.create!(user_id: user.id, music_style_id: s)
+    end
+  end
+end
+
+puts 'Assign instruments to user ...'
+
+User.all.each do |user|
+  (rand(1..2).round).times do |i|
+    instru = Instrument.pluck(:id).sample(1).uniq
+    instru.each do |i|
+      UserInstrument.create!(user_id: user.id, instrument_id: i, level: ['beginner', 'middle', 'expert'].sample)
     end
   end
 end

@@ -75,6 +75,11 @@ body {
   padding-bottom: 22px;
 }
 
+.tinder--show--card {
+  display: flex;
+  justify-content: center;
+}
+
 .tinder--card {
   display: inline-block;
   width: 90vw;

@@ -1,18 +1,26 @@
 <br>
-<div class="card mb-3">
-  <%= cl_image_tag @user.photos.first.key, height: 300, width: 400, crop: :fill %>
-  <div class="card-body">
-      <h2><%= @user.name %> </h2>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item"><i><h4> <%= @user.description %> </h4></i></li>
-          <li class="list-group-item">I'm into : <%= @user.music_styles[0].name %></li>
-          <li class="list-group-item">I want to be a : <%= @user.goal.capitalize %></li>
-          <li class="list-group-item">I've been playing for : <%= @user.experience_in_years %> years</li>
-        </ul>
-        <br>
-    <%= link_to "/chatrooms" do %>
-      <button type="button" class=".btn btn-show-contact">Contact me</button>
-    <% end %>
-    <br>
+<div class="tinder--show--card">
+  <div class="card mb-3 tinder--card">
+    <%= cl_image_tag @user.photos.first.key, height: 300, width: 400, crop: :fill %>
+    <div class="card-body">
+        <h2><%= @user.name %> </h2>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><i><p> <%= @user.description %> </p></i></li>
+            <li class="list-group-item">I'm into : <%= @user.music_styles.map { |m| m.name }.join(', ').html_safe %></li>
+            <li class="list-group-item">I want to be a : <%= @user.goal.capitalize %></li>
+            <li class="list-group-item">I've been playing for : <%= @user.experience_in_years %> years</li>
+          </ul>
+          <br>
+      <% if current_user.already_in_chatroom?(@user, current_user) %>
+        <%= link_to chatroom_path(current_user.common_chatroom(@user, current_user)) do %>
+          <button type="button" class="btn btn-show-contact">Contact me</button>
+        <% end %>
+      <% else %>
+        <%= link_to user_user_chatrooms_path(@user), method: :post do %>
+          <button type="button" class="btn btn-show-contact">Contact me</button>
+        <% end %>
+      <% end %>
+      <br>
+    </div>
   </div>
 </div>
