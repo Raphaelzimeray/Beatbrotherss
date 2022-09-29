@@ -9,7 +9,7 @@
     <% @users.each do |user| %>
       <div class="tinder--card">
         <%= link_to user_path(user) do %>
-          <img src=" <%= user.avatar_url %> " alt="My profile pic">
+          <%= cl_image_tag user.photos.first.key, height: 300, width: 400, crop: :fill %>
           <div class="card-body start">
             <h3 class="card-title"> <%= user.name %> </h3>
             <% end %>
