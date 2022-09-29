@@ -6,7 +6,6 @@ class UsersController < ApplicationController
   def toggle_favorite
     @user = User.find(params[:id])
     current_user.favorite(@user)
-    # current_user.favorited?(@user) ? current_user.unfavorite(@user) : current_user.favorite(@user)
   end
 
   def new
@@ -21,19 +20,11 @@ class UsersController < ApplicationController
   end
 
   def index
-    # @users = User.all
-    # search = current_user.music_styles[0].name
-    # User.all.where(name: search)
-
-    users_filtered = []
-    current_user.music_styles.each do |current_style|
-      style = current_style.name
-      @filter = User.includes(:music_styles).where(music_styles: { name: style }).to_ary()
-      users_filtered << @filter
+    if current_user
+      @users = User.joins(:music_styles).where(music_styles: current_user.music_styles).uniq.reject { |user| user == current_user }
+    else
+      @users = User.all
     end
-    usersss = users_filtered[0] + users_filtered[1]
-    @users = usersss.uniq
-    # raise
   end
 
 
@@ -42,7 +33,8 @@ class UsersController < ApplicationController
   end
 
   def show
-
+    @chatroom = Chatroom.new
+    @user_chatroom = UserChatroom.new
   end
 
   def edit

@@ -441,13 +441,13 @@ user20.photos.attach(io: File.open('app/assets/images/user20.jpg'), filename: 'u
 user20.save!
 puts "-> #{user20.name} has been created"
 
-puts "creating Chatrooms..."
+# puts "creating Chatrooms..."
 
-Chatroom.create!(name: "Conversation")
-Message.create!(content: "Hi, I love your music ! :)", chatroom_id: Chatroom.first.id, user_id: admin.id)
-Message.create!(content: "Thanks, I just listened to yours and love it aswell ! 🔥", chatroom_id: Chatroom.first.id, user_id: user2.id)
+# Chatroom.create!(name: "Conversation")
+# Message.create!(content: "Hi, I love your music ! :)", chatroom_id: Chatroom.first.id, user_id: admin.id)
+# Message.create!(content: "Thanks, I just listened to yours and love it aswell ! 🔥", chatroom_id: Chatroom.first.id, user_id: user2.id)
 
-puts "Finished!"
+puts 'Assign music style to user ...'
 
 User.all.each do |user|
   (rand(2..3).round).times do |i|
@@ -457,3 +457,5 @@ User.all.each do |user|
     end
   end
 end
+
+puts "Finished!"
