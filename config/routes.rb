@@ -3,9 +3,6 @@ Rails.application.routes.draw do
   mount ActionCable.server => '/cable'
   root to: "pages#home"
   resources :users do
-    member do
-      get :parameters
-    end
     resources :user_songs
     resources :user_instruments, only: [:new, :create, :edit, :update, :destroy]
     resources :user_chatrooms, only: [:create]

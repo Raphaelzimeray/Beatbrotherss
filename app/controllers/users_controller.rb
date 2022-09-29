@@ -49,10 +49,6 @@ class UsersController < ApplicationController
     @user.destroy
   end
 
-  def parameters
-    @user_song = UserSong.new
-    @parameters = User.parameters
-  end
 
   private
 
