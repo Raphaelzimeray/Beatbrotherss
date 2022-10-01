@@ -4,22 +4,15 @@
   <% end %>
 </div>
 <div class="container chatroom" data-controller="chatroom-subscription"
-  data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
+  data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
+  data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
   <div class="messages" data-chatroom-subscription-target="messages">
-    <% if @chatroom.messages.blank? %>
-      <i>Be the first to send <%= @chatroom.chatroom_buddy(current_user).name %> a message 🎶</i>
-    <% else %>
-      <% @chatroom.messages.each do |message| %>
-        <% if message.user_id == current_user.id %>
-          <div class="message-current-user">
-            <%= render "messages/message", message: message %>
-          </div>
-        <% else %>
-          <div class="message-other-user">
-            <%= render "messages/message", message: message %>
-          </div>
-        <% end %>
-      <% end %>
+    <% @chatroom.messages.each do |message| %>
+      <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
+        <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
+          <%= render "messages/message", message: message %>
+        </div>
+      </div>
     <% end %>
 
   </div>

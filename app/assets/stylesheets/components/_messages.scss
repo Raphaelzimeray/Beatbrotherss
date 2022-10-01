@@ -1,4 +1,11 @@
-.message-current-user {
+.sender-style, .receiver-style {
+  width: 70%;
+  max-width: 400px;
+  padding: 8px;
+  min-height: 80px;
+}
+
+.sender-style {
   display: flex;
   justify-content: end;
   text-align: end;
@@ -10,8 +17,8 @@
   }
 }
 
-.message-other-user p {
-  background-color: rgba(252, 92, 125, 0.5);
+.receiver-style p {
+  background-color: rgba(184, 155, 255, 0.5);
   border-radius: 15px;
   width: 200px;
   padding-left: 10px;

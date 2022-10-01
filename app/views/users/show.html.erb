@@ -19,15 +19,16 @@
           <% end %>
         </ul>
         <br>
+
         <% if current_user.already_in_chatroom?(@user, current_user) %>
-        <%= link_to chatroom_path(current_user.common_chatroom(@user, current_user)) do %>
-          <button type="button" class="btn btn-show-contact">Contact me</button>
+          <%= link_to chatroom_path(current_user.common_chatroom(@user, current_user)) do %>
+            <button type="button" class="btn btn-show-contact">Contact me</button>
+          <% end %>
+        <% else %>
+          <%= link_to user_user_chatrooms_path(@user), method: :post do %>
+            <button type="button" class="btn btn-show-contact">Contact me</button>
+          <% end %>
         <% end %>
-      <% else %>
-        <%= link_to user_user_chatrooms_path(@user), method: :post do %>
-          <button type="button" class="btn btn-show-contact">Contact me</button>
-        <% end %>
-      <% end %>
       <br>
     </div>
   </div>

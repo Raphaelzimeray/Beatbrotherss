@@ -1,12 +1,13 @@
 <h1>Messages</h1>
 <br>
 <div class="chatrooms">
-  <% @chatrooms.each do |chatroom| %>
-    <%= link_to chatroom_path(chatroom) do %>
+  <% @user_chatrooms.each do |user_chatroom| %>
+    <%= link_to chatroom_path(user_chatroom.chatroom_id) do %>
       <div class="chatroom-card">
-        <%= cl_image_tag chatroom.chatroom_buddy(current_user).photos.first.key, class: "chatroom-card-avatar" %>        <div class="chatroom-card-content">
-          <p class="chatroom-card-content-name"><%= chatroom.chatroom_buddy(current_user).name %></p>
-          <p class="chatroom-card-content-message"><%= chatroom.messages.last.content.truncate(25) %></p>
+        <%= cl_image_tag user_chatroom.chatroom.chatroom_buddy(current_user).photos.first.key, class: "chatroom-card-avatar" %>
+        <div class="chatroom-card-content">
+          <p class="chatroom-card-content-name"><%= user_chatroom.chatroom.chatroom_buddy(current_user).name %></p>
+          <p class="chatroom-card-content-message"><%= user_chatroom.chatroom.messages.last.content.truncate(25) %></p>
         </div>
       </div>
     <% end %>

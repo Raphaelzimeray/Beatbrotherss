@@ -7,6 +7,6 @@ class ChatroomsController < ApplicationController
 
   def index
     @body_class = 'chatroom-background'
-    @chatrooms = current_user.chatrooms.uniq
+    @user_chatrooms = current_user.user_chatrooms.uniq
   end
 end
