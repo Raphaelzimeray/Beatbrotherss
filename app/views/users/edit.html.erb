@@ -20,6 +20,7 @@
           A <%= @user.goal %></li>
           <li class="list-group-item"><div class="title--card">⏳ I've been playing for</div>
           <%= @user.experience_in_years %> years</li>
+          <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
         </ul>
         <br>
     </div>

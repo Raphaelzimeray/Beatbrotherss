@@ -25,6 +25,7 @@
           <button type="button" class="btn btn-show-contact">Contact me</button>
         <% end %>
       <% end %>
+      <%= link_to "unlike", user_user_unfavorited_path(@user), remote: true, method: :post %>
       <br>
     </div>
   </div>
