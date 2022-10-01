@@ -89,7 +89,12 @@ admin = User.new(
 )
 admin.photos.attach(io: File.open('app/assets/images/ringo.jpeg'), filename: 'ringo.jpeg', content_type: 'image/jpeg')
 admin.save!
+user_song_admin = UserSong.new(title:"Black and Blue", category: "Jazz", user_id: admin.id)
+user_song_admin.url.attach(io: File.open('app/assets/audio/Black And Blue.mp3'), filename: 'Black And Blue.mp3')
+user_song_admin.save!
+
 puts "-> #{admin.name} has been created"
+puts "->#{user_song_admin.title} has been created"
 
 user1 = User.new(
 
@@ -109,7 +114,13 @@ user1 = User.new(
 )
 user1.photos.attach(io: File.open('app/assets/images/user1.jpg'), filename: 'user1.jpg')
 user1.save!
+
+user_song_1 = UserSong.new(title: "Hymn To Freedom", category: "Gospel", user_id: user1.id)
+user_song_1.url.attach(io: File.open('app/assets/audio/OSCAR PETERSON AND OLIVER JONES HYMN TO FREEDOM.mp3'), filename: 'HYMN TO FREEDOM.mp3')
+user_song_1.save!
+
 puts "-> #{user1.name} has been created"
+puts "-> #{user_song_1.title} has been created"
 
 user2 = User.new(
 
@@ -127,9 +138,17 @@ user2 = User.new(
   number_of_concerts: Faker::Number.within(range: 1..10),
   disponibility: "Monday and Wednesday nights",
 )
+
 user2.photos.attach(io: File.open('app/assets/images/user2.jpg'), filename: 'user2.jpg')
 user2.save!
+
+user_song_2 = UserSong.new(title: "Le chic et le charme", category: "Jazz", user_id: user2.id)
+user_song_2.url.attach(io: File.open('app/assets/audio/Le Chic Et Le Charme (Live).mp3'), filename: 'Le Chic Et Le Charme (Live).mp3')
+user_song_2.save!
+
+
 puts "-> #{user2.name} has been created"
+puts "->#{user_song_2.title} has been created"
 
 user3 = User.new(
 
@@ -149,6 +168,10 @@ user3 = User.new(
 )
 user3.photos.attach(io: File.open('app/assets/images/user3.jpg'), filename: 'user3.jpg')
 user3.save!
+
+
+
+
 puts "-> #{user3.name} has been created"
 
 user4 = User.new(
