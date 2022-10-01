@@ -25,11 +25,6 @@
             <button type="button" class="btn btn-show-contact">Contact me</button>
           <% end %>
         <% else %>
-          <%= link_to user_user_chatrooms_path(@user), method: :post do %>
-            <button type="button" class="btn btn-show-contact">Contact me</button>
-          <% end %>
-        <% end %>
-      <% else %>
         <%= link_to user_user_chatrooms_path(@user), method: :post do %>
           <button type="button" class="btn btn-show-contact">Contact me</button>
         <% end %>
@@ -39,4 +34,3 @@
     </div>
   </div>
 </div>
-@user.user_songs.first.url
