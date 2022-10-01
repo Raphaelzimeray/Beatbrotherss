@@ -3,5 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @body_class = 'homepage-background'
+    @user = User.new
   end
+  
 end

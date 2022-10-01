@@ -1,4 +1,5 @@
 import * as Hammer from "hammerjs";
+import { csrfToken } from "@rails/ujs"
 
 var tinderContainer = document.querySelector('.tinder');
 var allCards = document.querySelectorAll('.tinder--card');
@@ -62,7 +63,27 @@ allCards.forEach(function (el) {
       var rotate = xMulti * yMulti;
 
       event.target.style.transform = 'translate(' + toX + 'px, ' + (toY + event.deltaY) + 'px) rotate(' + rotate + 'deg)';
-      initCards();
+
+
+      const currentURL = event.target.firstElementChild.href
+      const userFavoritableId = currentURL.split('/')[4]
+      console.log(userFavoritableId)
+
+      const data = {
+        user_favoritable_id: userFavoritableId
+      }
+
+      fetch('/new_favorite', {
+        method: "POST",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+          "X-CSRF-Token": csrfToken()
+        },
+        body: JSON.stringify(data)
+      })
+
+       initCards();
     }
   });
 });
@@ -83,6 +104,26 @@ function createButtonListener(love) {
 
     if (love) {
       card.style.transform = 'translate(' + moveOutWidth + 'px, -100px) rotate(-30deg)';
+
+      const currentURL = card.firstElementChild.href
+      const userFavoritableId = currentURL.split('/')[4]
+      console.log(userFavoritableId)
+
+      const data = {
+        user_favoritable_id: userFavoritableId
+      }
+
+
+      fetch('/new_favorite', {
+        method: "POST",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+          "X-CSRF-Token": csrfToken()
+        },
+        body: JSON.stringify(data)
+      })
+
     } else {
       card.style.transform = 'translate(-' + moveOutWidth + 'px, -100px) rotate(30deg)';
     }
