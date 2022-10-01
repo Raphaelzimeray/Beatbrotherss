@@ -65,26 +65,25 @@ allCards.forEach(function (el) {
       event.target.style.transform = 'translate(' + toX + 'px, ' + (toY + event.deltaY) + 'px) rotate(' + rotate + 'deg)';
 
 
-      console.log(event)
-      const curreentURL = event.target.firstElementChild.href
-      const userFavoritableId = curreentURL.split('/')[4]
+      const currentURL = event.target.firstElementChild.href
+      const userFavoritableId = currentURL.split('/')[4]
       console.log(userFavoritableId)
-      console.log(event.target.data)
 
       const data = {
         user_favoritable_id: userFavoritableId
       }
+
       fetch('/new_favorite', {
         method: "POST",
-        headers: { "Accept": "application/json", "X-CSRF-Token": csrfToken() },
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+          "X-CSRF-Token": csrfToken()
+        },
         body: JSON.stringify(data)
       })
-        // .then(response => response.json())
-        // .then((data) => {
-        //   console.log(data)
-        // })
 
-      initCards();
+       initCards();
     }
   });
 });
@@ -105,6 +104,26 @@ function createButtonListener(love) {
 
     if (love) {
       card.style.transform = 'translate(' + moveOutWidth + 'px, -100px) rotate(-30deg)';
+
+      const currentURL = card.firstElementChild.href
+      const userFavoritableId = currentURL.split('/')[4]
+      console.log(userFavoritableId)
+
+      const data = {
+        user_favoritable_id: userFavoritableId
+      }
+
+
+      fetch('/new_favorite', {
+        method: "POST",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+          "X-CSRF-Token": csrfToken()
+        },
+        body: JSON.stringify(data)
+      })
+
     } else {
       card.style.transform = 'translate(-' + moveOutWidth + 'px, -100px) rotate(30deg)';
     }
