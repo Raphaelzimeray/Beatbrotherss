@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, only: :toggle_favorite
 
   def toggle_favorite
+    @body_class = 'homepage-background'
     @user = User.find(params[:id])
     current_user.favorite(@user)
   end
@@ -20,6 +21,7 @@ class UsersController < ApplicationController
   end
 
   def index
+    @body_class = 'index-background'
     if current_user
       @users = User.joins(:music_styles).where(music_styles: current_user.music_styles).uniq.reject { |user| user == current_user }
     else
@@ -29,16 +31,18 @@ class UsersController < ApplicationController
 
 
   def index_favorited
+    @body_class = 'favorited-background'
     @favorited_users = current_user.all_favorites
   end
 
   def show
+    @body_class = 'show-background'
     @chatroom = Chatroom.new
     @user_chatroom = UserChatroom.new
   end
 
   def edit
-
+    @body_class = 'edit-background'
   end
 
   def update

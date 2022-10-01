@@ -12,12 +12,19 @@
     <%= favicon_link_tag asset_path('sigle_sans_fond.png') %>
   </head>
 
-  <body class=<%= params[:controller] == "users" && params[:action] == "show" ? "show-background" : "default-background"%>>
+  <%# <body class=<%= params[:controller] == "users" && params[:action] == "show" ? "show-background" : "default-background"%>
+  <body class="<%= @body_class %>">
 
     <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
       <div class="container-fluid">
-        <%= link_to "/", class: "navbar-brand" do %>
-        <%= image_tag("logo_sans_fond.png") %>
+        <% if current_user %>
+          <%= link_to "/users", class: "navbar-brand" do %>
+          <%= image_tag("logo_sans_fond.png") %>
+          <% end %>
+        <% else %>
+          <%= link_to "/", class: "navbar-brand" do %>
+          <%= image_tag("logo_sans_fond.png") %>
+          <% end %>
         <% end %>
       </div>
     </div>

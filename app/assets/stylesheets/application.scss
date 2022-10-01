@@ -12,12 +12,46 @@
 @import "pages/index";
 @import "pages/show_user";
 
-.default-background {
-  background-image: linear-gradient(to right, #fc5c7d, #6a82fb);
+.homepage-background {
+  background: #7618FD;
+  background: linear-gradient(228deg, #140c1e, #2d1d4d);
+  background-attachment: fixed;
+}
+
+.favorited-background {
+  background: #7618FD;
+  background-attachment: fixed;
+  background-image: radial-gradient(circle at 4.55% 104.17%, #ff9a53 0, #ff8d55 5%, #ff7c52 10%, #ff654d 20%, #f94646 50%, #ea1a40 62.5%, #de0040 75%, #d50043 87.5%, #cf004a 100%);
+}
+
+.index-background {
+  background: #7618FD;
+  background-attachment: fixed;
+  background-image: linear-gradient(222deg, #4854e6 0%, #e5b2ca 160%);
+}
+
+.chatroom-background {
+  background: #7618FD;
+  background-attachment: fixed;
+  background-image: radial-gradient(circle at 4.55% 104.17%, #b89bff 0, #9184ff 25%, #6c6cd8 50%, #4955b0 75%, #293f8a 100%);
 }
 
 .show-background {
-  background-image: linear-gradient(to right, #6a82fb, #93efb3);
+  background: #7618FD;
+  background-attachment: fixed;
+  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+}
+
+.edit-background {
+  background: #7618FD;
+  background-attachment: fixed;
+  background-image: linear-gradient(200deg, #7c49bc, #6547dc);
+}
+
+.song-background {
+  background: #7618FD;
+  background-attachment: fixed;
+  background-image: radial-gradient(circle at -11.24% 85.36%, #ccffac 0, #b9ffb1 10%, #a5feb5 20%, #91f4b7 30%, #7ee7b7 40%, #6cd8b4 50%, #5dc9b0 60%, #52bcac 70%, #4ab0a9 80%, #45a7a6 90%, #429fa4 100%);
 }
 
 a {
