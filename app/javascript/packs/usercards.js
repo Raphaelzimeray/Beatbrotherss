@@ -1,4 +1,5 @@
 import * as Hammer from "hammerjs";
+import { csrfToken } from "@rails/ujs"
 
 var tinderContainer = document.querySelector('.tinder');
 var allCards = document.querySelectorAll('.tinder--card');
@@ -62,6 +63,27 @@ allCards.forEach(function (el) {
       var rotate = xMulti * yMulti;
 
       event.target.style.transform = 'translate(' + toX + 'px, ' + (toY + event.deltaY) + 'px) rotate(' + rotate + 'deg)';
+
+
+      console.log(event)
+      const curreentURL = event.target.firstElementChild.href
+      const userFavoritableId = curreentURL.split('/')[4]
+      console.log(userFavoritableId)
+      console.log(event.target.data)
+
+      const data = {
+        user_favoritable_id: userFavoritableId
+      }
+      fetch('/new_favorite', {
+        method: "POST",
+        headers: { "Accept": "application/json", "X-CSRF-Token": csrfToken() },
+        body: JSON.stringify(data)
+      })
+        // .then(response => response.json())
+        // .then((data) => {
+        //   console.log(data)
+        // })
+
       initCards();
     }
   });

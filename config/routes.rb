@@ -19,5 +19,7 @@ Rails.application.routes.draw do
     get 'favorited_users', to: "users#index_favorited"
   end
 
+  
+  post 'new_favorite', to: "users#create_favorited"
 #   For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -6,9 +6,9 @@ export default class extends Controller {
   connect (){
     console.log('Hello world !')
   }
-  
+
   displayForm() {
-    // this.infosTarget.classList.add("d-none")
-    // this.formTarget.classList.remove("d-none")
+    this.infosTarget.classList.add("d-none")
+    this.formTarget.classList.remove("d-none")
   }
 }

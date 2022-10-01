@@ -2,6 +2,9 @@ class UsersController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: :toggle_favorite
+  before_action :fav_params
+  skip_before_action :verify_authenticity_token
+
 
   def toggle_favorite
     @body_class = 'homepage-background'
@@ -29,6 +32,20 @@ class UsersController < ApplicationController
     end
   end
 
+  def create_favorited
+    user = User.find(current_user.id)
+    user_fav = User.find(fav_params["user_favoritable_id"])
+    p 'toto'
+    p user
+    p fav_params
+    # p params
+    # User.find(params[])
+    # respond_to do |format|
+    #     # format.html { redirect_to restaurant_path(@restaurant) }
+    #     userFavoritableId = format.json # Follow the classic Rails flow and look for a create.json view
+    # end
+    # Favorite.create!(favoritor_type: "User", favoritor_id: current_user.id, favoritable_type: "User", favoritable_id: userFavoritableId)
+  end
 
   def index_favorited
     @body_class = 'favorited-background'
@@ -62,5 +79,9 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :surname, :photos, :birth_date, :address, :latitude, :longitude, :mail_address, :password, :description, :music_style, :goal, :experience_in_years, :number_of_concerts, :disponibility, :id)
+  end
+
+  def fav_params
+    params.require(:user).permit(:data, :user_favoritable_id)
   end
 end
