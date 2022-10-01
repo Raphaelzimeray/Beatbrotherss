@@ -1,0 +1,108 @@
+.connexion-btn-border {
+  display: inline-block;
+  margin: 10%;
+  color: white;
+  padding: 2px;
+  border-radius: 80px;
+  font-size: 1.5em;
+  background-image: linear-gradient(24deg,#298cf0, #c88bf0);
+  text-align: center;
+  display: flex;
+  span {
+    display: inline-block;
+    background: #23173a;
+    padding: 9px 32px;
+    border-radius: 80px;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+.connexion-btn-border:hover {
+  span {
+    background: #5b30db83;
+    color: #211536;
+  }
+}
+
+.connexion-btn-full {
+  display: block;
+  margin: 10%;
+  color: black;
+  padding: 12px 32px;
+  border-radius: 80px;
+  font-size: 1.5em;
+  font-weight: 600;
+  background: linear-gradient(24deg,#298cf0, #c88bf0);
+  transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out, border-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+  border: 1px solid linear-gradient(24deg,#298cf0, #c88bf0);
+  text-align: center;
+}
+
+.connexion-btn-full:hover {
+  background: linear-gradient(24deg,#396a9caa, #984bcbaa);
+  color: white;
+}
+
+.modify-button {
+  background-color: #ffffffbf;
+  border: 1px solid #bbc0ca;
+  text-align: center;
+  color: black;
+  border-radius: 4px;
+  padding: 2px 12px;
+  font-size: 0.8em;
+  box-shadow: 0px 0px 6px #3b4d7055;
+  top: -8px;
+  right: -243px;
+  position: relative;
+}
+
+.modify-button:hover {
+  color: black;
+}
+
+.modify-button-img {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background-color: #ffffffbf;
+  border: 1px solid #bbc0ca;
+  text-align: center;
+  color: black;
+  border-radius: 4px;
+  padding: 2px 12px;
+  font-size: 0.8em;
+  box-shadow: 0px 0px 6px #3b4d70cc;
+}
+
+.modify-button-img:hover {
+  color: black;
+}
+
+.zoomage {
+  transition: transform .4s ease;
+  }
+
+.zoomage:hover {
+transform: scale(1.04);
+}
+
+.addpadding {
+padding: 1%;
+}
+
+.modify-icon {
+  background-color: white;
+  border-radius: 20px;
+  padding: 3px;
+  border: 1px solid #666a8b;
+  margin-left: 5px;
+}
+
+.fas {
+  position: relative;
+  top: 0px;
+  left: -2px;
+  margin-left: 5px;
+}

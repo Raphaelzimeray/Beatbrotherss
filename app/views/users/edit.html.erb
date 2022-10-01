@@ -1,0 +1,27 @@
+<br>
+<div class="tinder--show--cards" data-controller="edit-user">
+  <div class="card mb-3 tinder--show--card">
+    <%= cl_image_tag @user.photos.first.key, height: 300, width: 400, crop: :fill %>
+      <a class="modify-button-img zoomage">change image</a>
+    <div class="card-body">
+        <h2><%= @user.name %> </h2>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><i> <%= @user.description %> </i>
+          <span class= "modify-icon"><i class="fas fa-pen fa-xs ml-2" data-edit-user-target="infos"></i></span>
+          <%= simple_form_for @user, html: { class: "d-none", data: { edit_user_target: 'form' } } do |f| %>
+            <%= f.input :description, label: false %>
+            <%= f.submit "update", class: "modify-button" %>
+          <% end %></li>
+          <li class="list-group-item"><div class="title--card">🎵 I'm into</div>
+          <%= @user.music_styles.map { |m| m.name }.join(', ').html_safe %></li>
+          <li class="list-group-item"><div class="title--card">👨‍🎤 I'm playing</div>
+          <%= @user.user_instruments.map { |i| "#{Instrument.find(i.instrument_id).name} (<i>#{i.level}</i>)" }.join(', ').html_safe %></li>
+          <li class="list-group-item"><div class="title--card">😎 I want to be</div>
+          A <%= @user.goal %></li>
+          <li class="list-group-item"><div class="title--card">⏳ I've been playing for</div>
+          <%= @user.experience_in_years %> years</li>
+        </ul>
+        <br>
+    </div>
+  </div>
+</div>

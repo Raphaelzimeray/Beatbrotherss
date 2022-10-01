@@ -3,7 +3,7 @@
   border: none;
 
   img {
-    border-radius: 8px;
+    border-radius: 8px 8px 0 0;
   }
 }
 
@@ -75,9 +75,28 @@ body {
   padding-bottom: 22px;
 }
 
-.tinder--show--card {
+.tinder--show--cards {
   display: flex;
   justify-content: center;
+}
+
+.tinder--show--card {
+  display: inline-block;
+  width: 90vw;
+  max-width: 400px;
+  background: #fbfcffcf;
+  padding-bottom: 8px;
+  border-radius: 8px;
+  overflow: hidden;
+  position: absolute;
+  will-change: transform;
+  transition: all 0.3s ease-in-out;
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
+  cursor: grab;
+  li {
+    background: none;
+  }
 }
 
 .tinder--card {
@@ -168,4 +187,10 @@ body {
   border: none;
   padding: 8px;
   border-radius: 8px;
+}
+
+.title--card{
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.8em;
 }

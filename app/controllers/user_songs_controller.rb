@@ -1,6 +1,7 @@
 class UserSongsController < ApplicationController
 
   def index
+    @body_class = 'song-background'
     @user_songs = UserSong.all
   end
 

@@ -1,1 +1,35 @@
 // Specific CSS for your home-page
+.default-body {
+  display: block;
+  max-width:400px;
+  margin: 50px auto;
+}
+
+.default-welcome-img {
+  max-width: 200px;
+  display: block;
+  margin: 40px auto 10px auto;
+}
+
+.default-sigle-img {
+  max-width: 260px;
+  display: block;
+  margin: auto;
+  padding: 5%;
+}
+
+.default-logo-img {
+  max-width: 380px;
+  display: block;
+  margin: 0px auto;
+}
+
+.default-txt {
+  color: #cbb9df;
+  text-align: center;
+  font-size: 1.25em;
+  font-weight: 200;
+  font-style: oblique;
+  letter-spacing: 0.025em;
+  margin-bottom: 4rem;
+}

@@ -502,4 +502,11 @@ User.all.each do |user|
   end
 end
 
+puts 'Adding some matches ❤️'
+
+User.all.each_with_index do |user, i|
+    Favorite.create!(favoritor_type: "User", favoritor_id: user.id, favoritable_type: "User", favoritable_id: User.all[rand(0..(i-1))].id) if i > 1
+    Favorite.create!(favoritor_type: "User", favoritor_id: user.id, favoritable_type: "User", favoritable_id: User.all[rand((i+1)..20)].id) if i < 19
+end
+
 puts "Finished!"

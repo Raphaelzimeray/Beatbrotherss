@@ -1,5 +1,12 @@
-<div class="container">
-  <h1>Welcome to <strong>BeatBrothers</strong></h1>
-  <p></p>
-  <a class="btn btn-secondary" href="/users/sign_in">Connexion</a>
+<div class="homepage-body">
+  <%= image_tag("welcome_to.png", class: "default-welcome-img") %>
+  <%= image_tag("sigle_sans_fond.png", class: "default-sigle-img") %>
+  <%= image_tag("logo_sans_fond.png", class: "default-logo-img") %>
+  <p class="default-txt">Find a musicien, Found your group</p>
+  <%= link_to new_user_session_path(), class: "connexion-btn-border" do %>
+    <span>I'm already a Bro'</span>
+  <% end %>
+  <%= link_to new_user_path(), class: "connexion-btn-full" do %>
+    Discover the app
+  <% end %>
 </div>

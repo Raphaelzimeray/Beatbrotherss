@@ -22,4 +22,3 @@ class MessagesController < ApplicationController
     params.require(:message).permit(:content, :chatroom_id)
   end
 end
-
