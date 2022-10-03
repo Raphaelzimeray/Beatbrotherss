@@ -170,9 +170,12 @@ user3.photos.attach(io: File.open('app/assets/images/user3.jpg'), filename: 'use
 user3.save!
 
 
-
+user_song_3 = UserSong.new(title: "Zoo", category: "Rap", user_id: user3.id)
+user_song_3.url.attach(io: File.open('app/assets/audio/Kaaris - Zoo.mp3'), filename: 'Kaaris - Zoo.mp3')
+user_song_3.save!
 
 puts "-> #{user3.name} has been created"
+puts "-> #{user_song_3.title} has been created"
 
 user4 = User.new(
   name: Faker::Name.first_name,
@@ -191,7 +194,14 @@ user4 = User.new(
 )
 user4.photos.attach(io: File.open('app/assets/images/user4.jpg'), filename: 'user4.jpg')
 user4.save!
+
+user_song_4 = UserSong.new(title: "September Second", category: "Jazz", user_id: user4.id)
+user_song_4.url.attach(io: File.open('app/assets/audio/September Second.mp3'), filename: 'September Second.mp3')
+user_song_4.save!
+
+
 puts "-> #{user4.name} has been created"
+puts "#{user_song_4.title} has been created"
 
 user5 = User.new(
   name: Faker::Name.first_name,
@@ -210,8 +220,14 @@ user5 = User.new(
 )
 user5.photos.attach(io: File.open('app/assets/images/user5.jpg'), filename: 'user5.jpg')
 user5.save!
-puts "-> #{user5.name} has been created"
 
+user_song_5 = UserSong.new(title: "Changing of the Guards", category: "Pop", user_id: user5.id)
+user_song_5.url.attach(io: File.open('app/assets/audio/Bob Dylan - Changing of the Guards (Official Audio).mp3'), filename: 'Changing of the Guards (Official Audio).mp3')
+user_song_5.save!
+
+
+puts "-> #{user5.name} has been created"
+puts "-> #{user_song_5.title} has been created"
 user6 = User.new(
   name: Faker::Name.first_name,
   surname: Faker::Name.last_name,
@@ -229,7 +245,13 @@ user6 = User.new(
 )
 user6.photos.attach(io: File.open('app/assets/images/user6.jpg'), filename: 'user6.jpg')
 user6.save!
+
+user_song_6 = UserSong.new(title: "La terre est ronde", category: "Rap", user_id: user6.id)
+user_song_6.url.attach(io: File.open('app/assets/audio/La terre est ronde.mp3'), filename: 'La terre est ronde.mp3')
+user_song_6.save!
+
 puts "-> #{user6.name} has been created"
+puts "-> #{user_song_6.title} has been created"
 
 user7 = User.new(
   name: Faker::Name.first_name,
@@ -248,7 +270,13 @@ user7 = User.new(
 )
 user7.photos.attach(io: File.open('app/assets/images/user7.jpg'), filename: 'user7.jpg')
 user7.save!
+
+user_song_7 = UserSong.new(title: "Moments musicaux No.4 E minor", category: "Classical", user_id: user7.id)
+user_song_7.url.attach(io: File.open('app/assets/audio/Nikolai Lugansky plays Rachmaninov Musical Moment No.4 in E minor - medici.tv.mp3'), filename: 'Rachmaninov Musical Moment No.4 in E minor - medici.tv.mp3')
+user_song_7.save!
+
 puts "-> #{user7.name} has been created"
+puts "-> #{user_song_7.title} has been created"
 
 user8 = User.new(
   name: Faker::Name.first_name,
@@ -267,7 +295,13 @@ user8 = User.new(
 )
 user8.photos.attach(io: File.open('app/assets/images/user8.jpg'), filename: 'user8.jpg')
 user8.save!
+
+user_song_8 = UserSong.new(title: "Mr Bojangles", category: "Blues", user_id: user8.id)
+user_song_8.url.attach(io: File.open('app/assets/audio/Mr. Bojangles.mp3'), filename: 'Mr. Bojangles.mp3')
+user_song_8.save!
+
 puts "-> #{user8.name} has been created"
+puts "-> #{user_song_8.title} has been created"
 
 user9 = User.new(
   name: Faker::Name.first_name,
@@ -286,7 +320,13 @@ user9 = User.new(
 )
 user9.photos.attach(io: File.open('app/assets/images/user9.jpg'), filename: 'user9.jpg')
 user9.save!
+
+user_song_9 = UserSong.new(title: "Penthouse Serenade", category: "Jazz", user_id: user9.id)
+user_song_9.url.attach(io: File.open('app/assets/audio/Erroll Garner in London - PENTHOUSE SERENADE.mp3'), filename: 'PENTHOUSE SERENADE.mp3')
+user_song_9.save!
+
 puts "-> #{user9.name} has been created"
+puts "-> #{user_song_9.title} has been created"
 
 user10 = User.new(
   name: Faker::Name.first_name,
@@ -305,7 +345,13 @@ user10 = User.new(
 )
 user10.photos.attach(io: File.open('app/assets/images/user10.jpg'), filename: 'user10.jpg')
 user10.save!
+
+user_song_10 = UserSong.new(title: "Unchain My Heart", category: "Rock", user_id: user10.id)
+user_song_10.url.attach(io: File.open('app/assets/audio/Unchain My Heart.mp3'), filename: 'Unchain My Heart.mp3')
+user_song_10.save!
+
 puts "-> #{user10.name} has been created"
+puts "-> #{user_song_10.title} has been created"
 
 user11 = User.new(
   name: Faker::Name.first_name,
@@ -324,7 +370,13 @@ user11 = User.new(
 )
 user11.photos.attach(io: File.open('app/assets/images/user11.jpg'), filename: 'user11.jpg')
 user11.save!
+
+user_song_11 = UserSong.new(title: "Imagine", category: "Pop", user_id: user11.id)
+user_song_11.url.attach(io: File.open('app/assets/audio/Imagine (Ultimate Mix).mp3'), filename: 'Imagine (Ultimate Mix).mp3')
+user_song_11.save!
+
 puts "-> #{user11.name} has been created"
+puts "-> #{user_song_11.title} has been created"
 
 user12 = User.new(
   name: Faker::Name.first_name,
@@ -343,7 +395,13 @@ user12 = User.new(
 )
 user12.photos.attach(io: File.open('app/assets/images/user12.jpg'), filename: 'user12.jpg')
 user12.save!
+
+user_song_12 = UserSong.new(title: "Vedrai, Vedrai", category: "Pop", user_id: user12.id)
+user_song_12.url.attach(io: File.open('app/assets/audio/Vedrai, vedrai.mp3'), filename: 'Vedrai, vedrai.mp3')
+user_song_12.save!
+
 puts "-> #{user12.name} has been created"
+puts "-> #{user_song_12.title} has been created"
 
 user13 = User.new(
   name: Faker::Name.first_name,
@@ -362,6 +420,8 @@ user13 = User.new(
 )
 user13.photos.attach(io: File.open('app/assets/images/user13.jpg'), filename: 'user13.jpg')
 user13.save!
+
+user_song_13 = UserSong.new(title: "", category: "", user_id: user13.id)
 puts "-> #{user13.name} has been created"
 
 user14 = User.new(
