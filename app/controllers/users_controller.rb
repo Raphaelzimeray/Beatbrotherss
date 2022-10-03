@@ -13,9 +13,10 @@ class UsersController < ApplicationController
 
   def new_visitor
     @user = User.new
-    @user.mail_address = Time.now.iso8601 + "#{rand(999999)}@mail.fr"
+    @user.email = Time.now.iso8601 + "#{rand(999999)}@mail.fr"
     @user.password = "password"
     @user.save!
+    redirect_to users_path(current_user)
   end
 
   def index
