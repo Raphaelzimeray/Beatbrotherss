@@ -421,8 +421,12 @@ user13 = User.new(
 user13.photos.attach(io: File.open('app/assets/images/user13.jpg'), filename: 'user13.jpg')
 user13.save!
 
-user_song_13 = UserSong.new(title: "", category: "", user_id: user13.id)
+user_song_13 = UserSong.new(title: "Us and Them", category: "Pop", user_id: user13.id)
+user_song_13.url.attach(io: File.open('app/assets/audio/Pink Floyd - Us and Them.mp3'), filename: 'Us and Them.mp3')
+user_song_13.save!
+
 puts "-> #{user13.name} has been created"
+puts "-> #{user_song_13.title} has been created"
 
 user14 = User.new(
   name: Faker::Name.first_name,
@@ -441,7 +445,13 @@ user14 = User.new(
 )
 user14.photos.attach(io: File.open('app/assets/images/user14.jpg'), filename: 'user14.jpg')
 user14.save!
+
+user_song_14 = UserSong.new(title: "Like a Rolling Stone", category: "Rock", user_id: user14.id)
+user_song_14.url.attach(io: File.open('app/assets/audio/Bob Dylan - Like a Rolling Stone (Official Audio).mp3'), filename: 'Like a Rolling Stone (Official Audio).mp3')
+user_song_14.save!
+
 puts "-> #{user14.name} has been created"
+puts "-> #{user_song_14.title} has been created"
 
 user15 = User.new(
   name: Faker::Name.first_name,
@@ -460,7 +470,13 @@ user15 = User.new(
 )
 user15.photos.attach(io: File.open('app/assets/images/user15.jpg'), filename: 'user15.jpg')
 user15.save!
+
+user_song_15 = UserSong.new(title: "Remember the name", category:"Hip Hop", user_id: user15.id)
+user_song_15.url.attach(io: File.open('app/assets/audio/Remember the Name (feat. Styles of Beyond).mp3'), filename: 'Remember the Name (feat. Styles of Beyond).mp3')
+user_song_15.save!
+
 puts "-> #{user15.name} has been created"
+puts "-> #{user_song_15.title} has been created"
 
 user16 = User.new(
   name: Faker::Name.first_name,
@@ -479,7 +495,13 @@ user16 = User.new(
 )
 user16.photos.attach(io: File.open('app/assets/images/user16.jpg'), filename: 'user16.jpg')
 user16.save!
+
+user_song_16 = UserSong.new(title: "Ain't Misbehavin", category: "Jazz", user_id: user16.id)
+user_song_16.url.attach(io: File.open('app/assets/audio/Fats Waller - Aint Misbehavin (Audio).mp3'), filename: 'Aint Misbehavin (Audio).mp3')
+user_song_16.save!
+
 puts "-> #{user16.name} has been created"
+puts "-> #{user_song_16.title} has been created"
 
 user17 = User.new(
   name: Faker::Name.first_name,
@@ -498,7 +520,13 @@ user17 = User.new(
 )
 user17.photos.attach(io: File.open('app/assets/images/user17.jpg'), filename: 'user17.jpg')
 user17.save!
+
+user_song_17 = UserSong.new(title: "La Foule", category: "Pop", user_id: user17.id)
+user_song_17.url.attach(io: File.open('app/assets/audio/La Foule - Il Triangolo del Tango.mp3'), filename: 'La Foule - Il Triangolo del Tango.mp3')
+user_song_17.save!
+
 puts "-> #{user17.name} has been created"
+puts "-> #{user_song_17.title} has been created"
 
 user18 = User.new(
   name: Faker::Name.first_name,
@@ -517,7 +545,13 @@ user18 = User.new(
 )
 user18.photos.attach(io: File.open('app/assets/images/user18.jpg'), filename: 'user18.jpg')
 user18.save!
+
+user_song_18 = UserSong.new(title: "Rocket Man", category: "Pop", user_id: user18.id)
+user_song_18.url.attach(io: File.open('app/assets/audio/Rocket Man (I Think Its Going To Be A Long Long Time).mp3'), filename: 'Rocket Man (I Think Its Going To Be A Long Long Time).mp3')
+user_song_18.save!
+
 puts "-> #{user18.name} has been created"
+puts "-> #{user_song_18.title} has been created"
 
 user19 = User.new(
   name: Faker::Name.first_name,
@@ -536,7 +570,13 @@ user19 = User.new(
 )
 user19.photos.attach(io: File.open('app/assets/images/user19.jpg'), filename: 'user19.jpg')
 user19.save!
+
+user_song_19 = UserSong.new(title: "Aguaplano", category: "Jazz", user_id: user19.id)
+user_song_19.url.attach(io: File.open('app/assets/audio/Aguaplano (Live).mp3'), filename: 'Aguaplano (Live).mp3')
+user_song_19.save!
+
 puts "-> #{user19.name} has been created"
+puts "-> #{user_song_19.title} has been created"
 
 user20 = User.new(
   name: Faker::Name.first_name,
@@ -555,7 +595,13 @@ user20 = User.new(
 )
 user20.photos.attach(io: File.open('app/assets/images/user20.jpg'), filename: 'user20.jpg')
 user20.save!
+
+user_song_20 = UserSong.new(title: "Stand By Me", category: "Blues", user_id: user20.id)
+user_song_20.url.attach(io: File.open('app/assets/audio/Stand by Me.mp3'), filename: 'Stand by Me.mp3')
+user_song_20.save!
+
 puts "-> #{user20.name} has been created"
+puts "-> #{user_song_20.title} has been created"
 
 # puts "creating Chatrooms..."
 
