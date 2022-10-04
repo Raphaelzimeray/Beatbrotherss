@@ -11,6 +11,7 @@
 @import "components/index";
 @import "pages/index";
 @import "pages/show_user";
+@import "pages/onboarding";
 
 .homepage-background {
   background: #7618FD;
@@ -52,6 +53,12 @@
   background: #7618FD;
   background-attachment: fixed;
   background-image: radial-gradient(circle at -11.24% 85.36%, #6cd8b4 0%, #429fa4 100%);
+}
+
+.onboarding-background {
+  background: #7618FD;
+  background-attachment: fixed;
+  background-image: radial-gradient(circle at -11.24% 85.36%, #e28e2b 0%, #dd6427 100%);
 }
 
 a {

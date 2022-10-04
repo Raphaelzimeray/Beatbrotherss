@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Hello you !</h1>
+  <em>To start, we have some quick questions to know a bit about you...</em>
+
+  <h2>What kind of music do you play ?</h2>
+  <em>We won’t judge you, even if you like reggaeton 😬</em>
+  <%= simple_form_for (@user), url: user_onboarding_path, method: :post do |f| %>
+    <%= f.input :music_styles, legend_tag: false, as: :check_boxes, collection: MusicStyle.all, item_label_class: 'onboarding-tags-label', input_html: { class: 'onboarding-tags-input d-none' }, item_wrapper_class: 'onboarding-tags' %>
+    <br>
+    <%= f.submit "next >", class: "onboarding-btn mt-3" %>
+  <% end %>
+</div>

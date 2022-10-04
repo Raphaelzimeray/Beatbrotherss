@@ -44,7 +44,7 @@ class UsersController < ApplicationController
 
   def edit
     @body_class = 'edit-background'
-    
+
   end
 
   def update
@@ -73,6 +73,21 @@ class UsersController < ApplicationController
     redirect_to user_favorited_users_path(current_user)
   end
 
+  def new_onboarding
+    @body_class = 'onboarding-background'
+    @user = User.find(params[:user_id])
+  end
+
+  def create_onboarding
+    @user = User.find(params[:user_id])
+    @user_styles = params[:user][:music_styles]
+    @user_styles.delete_at(0)
+    @user_styles.each do |style|
+      UserMusicStyle.create!(user: @user, music_style_id: style.to_i)
+    end
+    redirect_to users_path()
+  end
+
   private
 
   def set_user
@@ -80,7 +95,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :surname, :photos, :birth_date, :address, :latitude, :longitude, :mail_address, :password, :description, :music_style, :goal, :experience_in_years, :number_of_concerts, :disponibility, :id)
+    params.require(:user).permit(:name, :surname, :photos, :birth_date, :address, :latitude, :longitude, :mail_address, :password, :description, :music_styles, :goal, :experience_in_years, :number_of_concerts, :disponibility, :id)
   end
 
   def fav_params

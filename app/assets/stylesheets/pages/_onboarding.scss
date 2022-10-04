@@ -1,0 +1,26 @@
+.onboarding-tags {
+  display: inline-block;
+  margin: 2px;
+}
+
+.onboarding-tags-label {
+  border: 1px solid #bd6115;
+  border-radius: 20px;
+  padding: 0px 8px;
+  background: #ffffffaa;
+  margin: 1px;
+}
+
+.onboarding-tags-input:checked + .onboarding-tags-label {
+  font-weight: bold;
+  background: #ffffff;
+  border: 2px solid #bd6115;
+  color: #bd6115;
+  margin: 0px;
+}
+
+.onboarding-btn {
+  border-radius: 20px;
+  padding: 2px 6px;
+  border: white;
+}
