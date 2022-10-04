@@ -17,6 +17,11 @@ Rails.application.routes.draw do
     post 'user_unfavorited', to: "users#user_unfavorited"
   end
 
+  resources :users, only: :edit do
+    get 'onboarding', to: "users#new_onboarding"
+    post 'onboarding', to: "users#create_onboarding"
+  end
+
 
   post 'new_favorite', to: "users#create_favorited"
   get 'new_visitor', to: "users#new_visitor"
