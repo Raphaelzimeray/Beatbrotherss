@@ -73,15 +73,17 @@ allCards.forEach(function (el) {
         user_favoritable_id: userFavoritableId
       }
 
-      fetch('/new_favorite', {
-        method: "POST",
-        headers: {
-          "Accept": "application/json",
-          "Content-Type": "application/json",
-          "X-CSRF-Token": csrfToken()
-        },
-        body: JSON.stringify(data)
-      })
+      if (event.deltaX > 0) {
+        fetch('/new_favorite', {
+          method: "POST",
+          headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+            "X-CSRF-Token": csrfToken()
+          },
+          body: JSON.stringify(data)
+        })
+      }
 
        initCards();
     }

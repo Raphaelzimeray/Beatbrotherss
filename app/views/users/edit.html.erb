@@ -1,12 +1,15 @@
 <br>
 <div class="tinder--show--cards" data-controller="edit-user">
   <div class="card mb-3 tinder--show--card">
-    <%= cl_image_tag @user.photos.first.key, height: 300, width: 400, crop: :fill %>
-      <a class="modify-button-img zoomage">change image</a>
+    <%= cl_image_tag @user.photos.first.key, height: 300, width: 400, crop: :fill, class: "img-show" %>
+      <a class="modify-button-img zoomage">change profil picture</a>
     <div class="card-body">
         <h2><%= @user.name %> </h2>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item"><i> <%= @user.description %> </i>
+
+          <li class="list-group-item"><% if @user.description == nil %>
+            <i>add a description</i>
+          <% end %><i> <%= @user.description %> </i>
           <span class= "modify-icon"><i class="fas fa-pen fa-xs ml-2" data-edit-user-target="infos"></i></span>
           <%= simple_form_for @user, html: { class: "d-none", data: { edit_user_target: 'form' } } do |f| %>
             <%= f.input :description, label: false %>

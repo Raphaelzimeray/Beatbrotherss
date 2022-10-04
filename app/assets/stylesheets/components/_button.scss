@@ -45,7 +45,7 @@
 }
 
 .modify-button {
-  background-color: #ffffffbf;
+  background-color: #ffffff;
   border: 1px solid #bbc0ca;
   text-align: center;
   color: black;
@@ -64,16 +64,18 @@
 
 .modify-button-img {
   position: absolute;
-  right: 10px;
-  top: 10px;
-  background-color: #ffffffbf;
-  border: 1px solid #bbc0ca;
+  right: 86px;
+  top: 140px;
+  background-color: #ffffff80;
+  // border: 1px solid #bbc0ca;
   text-align: center;
   color: black;
   border-radius: 4px;
   padding: 2px 12px;
-  font-size: 0.8em;
+  font-size: 1.2em;
   box-shadow: 0px 0px 6px #3b4d70cc;
+  font-weight: 600;
+  backdrop-filter: blur(5px);
 }
 
 .modify-button-img:hover {

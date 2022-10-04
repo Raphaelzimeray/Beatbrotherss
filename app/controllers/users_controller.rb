@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :authenticate_user!, only: :index
+  skip_before_action :authenticate_user!, only: [:index, :new_visitor]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: :toggle_favorite
   before_action :fav_params, only: [:create_favorited, :destroy_favorited]
@@ -13,9 +13,17 @@ class UsersController < ApplicationController
 
   def new_visitor
     @user = User.new
-    @user.mail_address = Time.now.iso8601 + "#{rand(999999)}@mail.fr"
-    @user.password = "password"
+    @user = User.create!(
+      email: Time.now.iso8601 + "#{rand(999999)}@mail.fr",
+      password: "password",
+    )
+    # @user.email =
+    # @user.password = "password"
+    @user.photos.attach(io: File.open('app/assets/images/silhouette_avatar.png'), filename: 'silhouette_avatar.png', content_type: 'image/png')
     @user.save!
+    # raise
+    sign_in(@user)
+    redirect_to after_sign_in_path_for(@user)
   end
 
   def index
@@ -36,6 +44,7 @@ class UsersController < ApplicationController
 
   def edit
     @body_class = 'edit-background'
+    
   end
 
   def update
@@ -63,7 +72,6 @@ class UsersController < ApplicationController
     current_user.unfavorite(user)
     redirect_to user_favorited_users_path(current_user)
   end
-
 
   private
 
