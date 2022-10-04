@@ -19,7 +19,7 @@
           <li class="list-group-item"><i><h4> <%= user.description %> </h4></i></li>
           <li class="list-group-item">I'm into : <%= user.music_styles[0].name %></li>
           <% if user.user_songs.exists? %>
-            <li class="mp3-in-index">My favorite song: <button> <%= link_to "Play song", user.user_songs.first.url, class: "html5" %></button></li>
+             My favorite song: <audio controls> <source src="<%= rails_blob_url(user.user_songs.first.url) %>" type="<%= user.user_songs.first.url.content_type %>"/></audio>
           <% end %>
         </ul>
       </div>
