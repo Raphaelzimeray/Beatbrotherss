@@ -7,6 +7,10 @@
   }
 }
 
+.card-body {
+  margin-bottom: -24px;
+}
+
 *, *:before, *:after {
   box-sizing: border-box;
   padding: 0;
@@ -87,7 +91,7 @@ body {
   background: #fbfcffcf;
   padding-bottom: 8px;
   border-radius: 8px;
-  overflow: hidden;
+  overflow: scroll;
   position: absolute;
   will-change: transform;
   transition: all 0.3s ease-in-out;
@@ -107,7 +111,7 @@ body {
   background: #F2F5FE;
   padding-bottom: 8px;
   border-radius: 8px;
-  overflow: hidden;
+  overflow: scroll;
   position: absolute;
   will-change: transform;
   transition: all 0.3s ease-in-out;
