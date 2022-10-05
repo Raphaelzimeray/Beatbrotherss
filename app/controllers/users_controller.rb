@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     @user.save!
     # raise
     sign_in(@user)
-    redirect_to after_sign_in_path_for(@user)
+    redirect_to user_onboarding_path(current_user)
   end
 
   def index
@@ -56,10 +56,11 @@ class UsersController < ApplicationController
   end
 
   def create_favorited
-    user = User.find(current_user.id)
+    @user = User.find(current_user.id)
     user_fav = User.find(fav_params[:user_favoritable_id])
-    user.favorite(user_fav)
-    user.save!
+    @user.favorite(user_fav)
+    @user.save!
+    redirect_back(fallback_location: root_path)
   end
 
   def index_favorited
@@ -70,7 +71,7 @@ class UsersController < ApplicationController
   def user_unfavorited
     user = User.find(params[:user_id])
     current_user.unfavorite(user)
-    redirect_to user_favorited_users_path(current_user)
+    redirect_back(fallback_location: root_path)
   end
 
   def new_onboarding
