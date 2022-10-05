@@ -1,3 +1,35 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "edit_user";
+
+#show-more-index{
+  color: #847a92;
+  margin: 0;
+  font-size: 0.85em;
+}
+
+#description-index {
+  font-size: 0.85em;
+  overflow: hidden;
+  max-height: 22rem;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+}
+
+.show-more-list-index {
+  background: #ebe8f3 !important;
+  position: fixed;
+  bottom: 0;
+  display: block;
+  margin: 0;
+  padding: 8px;
+  border-top: 1px solid #00000010 !important;
+  width: -webkit-fill-available;
+}
+
+.end-list-index {
+  border-bottom: none;
+}
