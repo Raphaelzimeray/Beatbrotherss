@@ -4,8 +4,37 @@ justify-content: center;
 flex-direction: column;
 }
 
-#ringo-img{
-  border-radius: 6px;
-  width: 500px;
+.unlike-btn-show {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 2em;
+  color: #f38d95;
+}
 
+.like-btn-show {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 2em;
+  color: #ffffff;
+}
+
+.btn-show-contact {
+  position: fixed;
+  top: 272px;
+  right: 12px;
+  background-color: #f3f2f4;
+  border-radius: 100px;
+  font-size: 2em;
+  padding: 4px 12px;
+  color: #58547d;
+  border: 0.5px solid #afacc6;
+  box-shadow: 0px 0px 6px #00000040;
+}
+
+.end-song {
+  background-color: #f3f5fe !important;
+  border-radius: 0 0px 10px 10px !important;
+  border: 1px solid #dcd2c9 !important;
 }

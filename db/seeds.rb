@@ -94,7 +94,7 @@ user_song_admin.url.attach(io: File.open('app/assets/audio/Black And Blue.mp3'),
 user_song_admin.save!
 
 puts "-> #{admin.name} has been created"
-puts "->#{user_song_admin.title} has been created"
+puts "---> #{user_song_admin.title} has been added"
 
 user1 = User.new(
 
@@ -120,7 +120,7 @@ user_song_1.url.attach(io: File.open('app/assets/audio/OSCAR PETERSON AND OLIVER
 user_song_1.save!
 
 puts "-> #{user1.name} has been created"
-puts "-> #{user_song_1.title} has been created"
+puts "---> #{user_song_1.title} has been added"
 
 user2 = User.new(
 
@@ -148,7 +148,7 @@ user_song_2.save!
 
 
 puts "-> #{user2.name} has been created"
-puts "->#{user_song_2.title} has been created"
+puts "---> #{user_song_2.title} has been added"
 
 user3 = User.new(
 
@@ -175,7 +175,7 @@ user_song_3.url.attach(io: File.open('app/assets/audio/Kaaris - Zoo.mp3'), filen
 user_song_3.save!
 
 puts "-> #{user3.name} has been created"
-puts "-> #{user_song_3.title} has been created"
+puts "---> #{user_song_3.title} has been added"
 
 user4 = User.new(
   name: Faker::Name.first_name,
@@ -201,7 +201,7 @@ user_song_4.save!
 
 
 puts "-> #{user4.name} has been created"
-puts "#{user_song_4.title} has been created"
+puts "---> #{user_song_4.title} has been added"
 
 user5 = User.new(
   name: Faker::Name.first_name,
@@ -227,7 +227,7 @@ user_song_5.save!
 
 
 puts "-> #{user5.name} has been created"
-puts "-> #{user_song_5.title} has been created"
+puts "---> #{user_song_5.title} has been added"
 user6 = User.new(
   name: Faker::Name.first_name,
   surname: Faker::Name.last_name,
@@ -251,7 +251,7 @@ user_song_6.url.attach(io: File.open('app/assets/audio/La terre est ronde.mp3'),
 user_song_6.save!
 
 puts "-> #{user6.name} has been created"
-puts "-> #{user_song_6.title} has been created"
+puts "---> #{user_song_6.title} has been added"
 
 user7 = User.new(
   name: Faker::Name.first_name,
@@ -276,7 +276,7 @@ user_song_7.url.attach(io: File.open('app/assets/audio/Nikolai Lugansky plays Ra
 user_song_7.save!
 
 puts "-> #{user7.name} has been created"
-puts "-> #{user_song_7.title} has been created"
+puts "---> #{user_song_7.title} has been added"
 
 user8 = User.new(
   name: Faker::Name.first_name,
@@ -301,7 +301,7 @@ user_song_8.url.attach(io: File.open('app/assets/audio/Mr. Bojangles.mp3'), file
 user_song_8.save!
 
 puts "-> #{user8.name} has been created"
-puts "-> #{user_song_8.title} has been created"
+puts "---> #{user_song_8.title} has been added"
 
 user9 = User.new(
   name: Faker::Name.first_name,
@@ -326,7 +326,7 @@ user_song_9.url.attach(io: File.open('app/assets/audio/Erroll Garner in London -
 user_song_9.save!
 
 puts "-> #{user9.name} has been created"
-puts "-> #{user_song_9.title} has been created"
+puts "---> #{user_song_9.title} has been added"
 
 user10 = User.new(
   name: Faker::Name.first_name,
@@ -351,7 +351,7 @@ user_song_10.url.attach(io: File.open('app/assets/audio/Unchain My Heart.mp3'), 
 user_song_10.save!
 
 puts "-> #{user10.name} has been created"
-puts "-> #{user_song_10.title} has been created"
+puts "---> #{user_song_10.title} has been added"
 
 user11 = User.new(
   name: Faker::Name.first_name,
@@ -376,7 +376,7 @@ user_song_11.url.attach(io: File.open('app/assets/audio/Imagine (Ultimate Mix).m
 user_song_11.save!
 
 puts "-> #{user11.name} has been created"
-puts "-> #{user_song_11.title} has been created"
+puts "---> #{user_song_11.title} has been added"
 
 user12 = User.new(
   name: Faker::Name.first_name,
@@ -401,7 +401,7 @@ user_song_12.url.attach(io: File.open('app/assets/audio/Vedrai, vedrai.mp3'), fi
 user_song_12.save!
 
 puts "-> #{user12.name} has been created"
-puts "-> #{user_song_12.title} has been created"
+puts "---> #{user_song_12.title} has been added"
 
 user13 = User.new(
   name: Faker::Name.first_name,
@@ -426,7 +426,7 @@ user_song_13.url.attach(io: File.open('app/assets/audio/Pink Floyd - Us and Them
 user_song_13.save!
 
 puts "-> #{user13.name} has been created"
-puts "-> #{user_song_13.title} has been created"
+puts "---> #{user_song_13.title} has been added"
 
 user14 = User.new(
   name: Faker::Name.first_name,
@@ -451,7 +451,7 @@ user_song_14.url.attach(io: File.open('app/assets/audio/Bob Dylan - Like a Rolli
 user_song_14.save!
 
 puts "-> #{user14.name} has been created"
-puts "-> #{user_song_14.title} has been created"
+puts "---> #{user_song_14.title} has been added"
 
 user15 = User.new(
   name: Faker::Name.first_name,
@@ -476,7 +476,7 @@ user_song_15.url.attach(io: File.open('app/assets/audio/Remember the Name (feat.
 user_song_15.save!
 
 puts "-> #{user15.name} has been created"
-puts "-> #{user_song_15.title} has been created"
+puts "---> #{user_song_15.title} has been added"
 
 user16 = User.new(
   name: Faker::Name.first_name,
@@ -501,7 +501,7 @@ user_song_16.url.attach(io: File.open('app/assets/audio/Fats Waller - Aint Misbe
 user_song_16.save!
 
 puts "-> #{user16.name} has been created"
-puts "-> #{user_song_16.title} has been created"
+puts "---> #{user_song_16.title} has been added"
 
 user17 = User.new(
   name: Faker::Name.first_name,
@@ -526,7 +526,7 @@ user_song_17.url.attach(io: File.open('app/assets/audio/La Foule - Il Triangolo 
 user_song_17.save!
 
 puts "-> #{user17.name} has been created"
-puts "-> #{user_song_17.title} has been created"
+puts "---> #{user_song_17.title} has been added"
 
 user18 = User.new(
   name: Faker::Name.first_name,
@@ -551,7 +551,7 @@ user_song_18.url.attach(io: File.open('app/assets/audio/Rocket Man (I Think Its 
 user_song_18.save!
 
 puts "-> #{user18.name} has been created"
-puts "-> #{user_song_18.title} has been created"
+puts "---> #{user_song_18.title} has been added"
 
 user19 = User.new(
   name: Faker::Name.first_name,
@@ -576,7 +576,7 @@ user_song_19.url.attach(io: File.open('app/assets/audio/Aguaplano (Live).mp3'), 
 user_song_19.save!
 
 puts "-> #{user19.name} has been created"
-puts "-> #{user_song_19.title} has been created"
+puts "---> #{user_song_19.title} has been added"
 
 user20 = User.new(
   name: Faker::Name.first_name,
@@ -601,7 +601,7 @@ user_song_20.url.attach(io: File.open('app/assets/audio/Stand by Me.mp3'), filen
 user_song_20.save!
 
 puts "-> #{user20.name} has been created"
-puts "-> #{user_song_20.title} has been created"
+puts "---> #{user_song_20.title} has been added"
 
 # puts "creating Chatrooms..."
 
