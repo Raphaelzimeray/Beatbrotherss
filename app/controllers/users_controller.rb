@@ -74,6 +74,12 @@ class UsersController < ApplicationController
     redirect_back(fallback_location: root_path)
   end
 
+  def add_as_favorited
+    user = User.find(params[:user_id])
+    current_user.favorite(user)
+    redirect_back(fallback_location: root_path)
+  end
+
   def new_onboarding
     @body_class = 'onboarding-background'
     @user = User.find(params[:user_id])
