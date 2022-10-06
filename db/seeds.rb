@@ -73,7 +73,7 @@ Instrument.create!(name: 'Singing', category: 'Vocal')
 
 puts "Creating users..."
 admin = User.new(
-  name: "Lorem",
+  name: "George",
   surname: "Test",
   email: "test@test.fr",
   password: "123456",
@@ -612,10 +612,15 @@ puts "---> #{user_song_20.title} has been added"
 puts 'Assign music style to user ...'
 
 User.all.each do |user|
-  (rand(2..3).round).times do |i|
-    styles = MusicStyle.pluck(:id).sample(1).uniq
-    styles.each do |s|
-      UserMusicStyle.create!(user_id: user.id, music_style_id: s)
+  # For Demo - delete for real life
+  if user.id == admin.id
+    nil
+  else
+    (rand(2..3).round).times do |i|
+      styles = MusicStyle.pluck(:id).sample(1).uniq
+      styles.each do |s|
+        UserMusicStyle.create!(user_id: user.id, music_style_id: s)
+      end
     end
   end
 end
@@ -638,4 +643,135 @@ User.all.each_with_index do |user, i|
     Favorite.create!(favoritor_type: "User", favoritor_id: user.id, favoritable_type: "User", favoritable_id: User.all[rand((i+1)..20)].id) if i < 19
 end
 
-puts "Finished!"
+puts "Finished first step"
+
+
+
+
+
+
+
+
+
+puts "create user for demo"
+
+user21 = User.new(
+  name: 'Patrick',
+  surname: Faker::Name.last_name,
+  email: Faker::Internet.email,
+  password: Faker::Barcode.ean(8),
+  birth_date: '1993',
+  address: "#{Faker::Address.street_name} #{Faker::Address.city}",
+  latitude: Faker::Address.latitude,
+  longitude: Faker::Address.longitude,
+  description: "I've been touring for the past 3 months and I'm looking for something more chill now.",
+  goal: "superstar",
+  experience_in_years: '8',
+  number_of_concerts: '15, give or take',
+  disponibility: "During the week-end",
+)
+user21.photos.attach(io: File.open('app/assets/images/user21.jpg'), filename: 'user21.jpg')
+user21.save!
+
+user_song_21 = UserSong.new(title: "La Foule", category: "Pop", user_id: user21.id)
+user_song_21.url.attach(io: File.open('app/assets/audio/La Foule - Il Triangolo del Tango.mp3'), filename: 'La Foule - Il Triangolo del Tango.mp3')
+user_song_21.save!
+
+puts "-> #{user21.name} has been created"
+puts "---> #{user_song_21.title} has been added"
+
+user22 = User.new(
+  name: 'Alex',
+  surname: Faker::Name.last_name,
+  email: Faker::Internet.email,
+  password: Faker::Barcode.ean(8),
+  birth_date: Faker::Date.birthday,
+  address: "#{Faker::Address.street_name} #{Faker::Address.city}",
+  latitude: Faker::Address.latitude,
+  longitude: Faker::Address.longitude,
+  description: Faker::GreekPhilosophers.quote,
+  goal: "superstar",
+  experience_in_years: '6',
+  number_of_concerts: '11',
+  disponibility: "Almost everyday",
+)
+user22.photos.attach(io: File.open('app/assets/images/user22.jpg'), filename: 'user22.jpg')
+user22.save!
+
+user_song_22 = UserSong.new(title: "Rocket Man", category: "Pop", user_id: user22.id)
+user_song_22.url.attach(io: File.open('app/assets/audio/Rocket Man (I Think Its Going To Be A Long Long Time).mp3'), filename: 'Rocket Man (I Think Its Going To Be A Long Long Time).mp3')
+user_song_22.save!
+
+puts "-> #{user22.name} has been created"
+puts "---> #{user_song_22.title} has been added"
+
+user23 = User.new(
+  name: 'Christie',
+  surname: Faker::Name.last_name,
+  email: Faker::Internet.email,
+  password: Faker::Barcode.ean(8),
+  birth_date: Faker::Date.birthday,
+  address: "#{Faker::Address.street_name} #{Faker::Address.city}",
+  latitude: Faker::Address.latitude,
+  longitude: Faker::Address.longitude,
+  description: Faker::GreekPhilosophers.quote,
+  goal: "superstar",
+  experience_in_years: '8',
+  number_of_concerts: 'Around 12.',
+  disponibility: "Only during the night 🧛‍♂️",
+)
+user23.photos.attach(io: File.open('app/assets/images/user23.jpg'), filename: 'user23.jpg')
+user23.save!
+
+user_song_23 = UserSong.new(title: "Stand By Me", category: "Blues", user_id: user23.id)
+user_song_23.url.attach(io: File.open('app/assets/audio/Stand by Me.mp3'), filename: 'Stand by Me.mp3')
+user_song_23.save!
+
+puts "-> #{user23.name} has been created"
+puts "---> #{user_song_23.title} has been added"
+
+user24 = User.new(
+  name: Faker::Name.first_name,
+  surname: Faker::Name.last_name,
+  email: Faker::Internet.email,
+  password: Faker::Barcode.ean(8),
+  birth_date: Faker::Date.birthday,
+  address: "#{Faker::Address.street_name} #{Faker::Address.city}",
+  latitude: Faker::Address.latitude,
+  longitude: Faker::Address.longitude,
+  description: Faker::GreekPhilosophers.quote,
+  goal: "superstar",
+  experience_in_years: Faker::Number.within(range: 1..50),
+  number_of_concerts: Faker::Number.within(range: 1..10),
+  disponibility: "During the week-end",
+)
+user24.photos.attach(io: File.open('app/assets/images/user24.jpg'), filename: 'user24.jpg')
+user24.save!
+
+user_song_24 = UserSong.new(title: "Aguaplano", category: "Jazz", user_id: user24.id)
+user_song_24.url.attach(io: File.open('app/assets/audio/Aguaplano (Live).mp3'), filename: 'Aguaplano (Live).mp3')
+user_song_24.save!
+
+puts "-> #{user24.name} has been created"
+puts "---> #{user_song_24.title} has been added"
+
+
+admin_style = MusicStyle.create!(name: 'Pop-Rock')
+UserMusicStyle.create!(user_id: admin.id, music_style_id: admin_style.id)
+UserMusicStyle.create!(user_id: user21.id, music_style_id: admin_style.id)
+UserMusicStyle.create!(user_id: user22.id, music_style_id: admin_style.id)
+UserMusicStyle.create!(user_id: user23.id, music_style_id: admin_style.id)
+UserMusicStyle.create!(user_id: user24.id, music_style_id: admin_style.id)
+
+UserInstrument.create!(user_id: user21.id, instrument_id: Instrument.all[4].id, level: 'beginer')
+UserInstrument.create!(user_id: user21.id, instrument_id: Instrument.all[3].id, level: 'medium')
+
+UserInstrument.create!(user_id: user22.id, instrument_id: Instrument.all[3].id, level: 'beginner')
+UserInstrument.create!(user_id: user22.id, instrument_id: Instrument.all[7].id, level: 'expert')
+
+UserInstrument.create!(user_id: user23.id, instrument_id: Instrument.all[3].id, level: 'expert')
+
+UserInstrument.create!(user_id: user24.id, instrument_id: Instrument.all[3].id, level: 'beginner')
+UserInstrument.create!(user_id: user24.id, instrument_id: Instrument.all[2].id, level: 'medium')
+
+puts "Finish the demo step"
