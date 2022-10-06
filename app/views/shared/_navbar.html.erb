@@ -1,7 +1,9 @@
 <nav class="navbar-bb fixed-bottom">
   <div class="footer">
     <div class="footer-links">
+    <% if controller_name == 'users' && action_name == 'edit' %>
       <a href="/users/<%=current_user.id%>/edit"><i class="fa-solid fa-user"></i></a>
+    <% end %>
       <a href="/users/<%=current_user.id%>/favorited_users"><i class="fa-regular fa-heart"></i></a>
       <a href="/users"><i class="fa-solid fa-compact-disc"></i></a>
       <a href="/chatrooms"><i class="fa-regular fa-comment"></i></a>
