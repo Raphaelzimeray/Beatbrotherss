@@ -656,18 +656,18 @@ puts "Finished first step"
 puts "create user for demo"
 
 user21 = User.new(
-  name: Faker::Name.first_name,
+  name: 'Patrick',
   surname: Faker::Name.last_name,
   email: Faker::Internet.email,
   password: Faker::Barcode.ean(8),
-  birth_date: Faker::Date.birthday,
+  birth_date: '1993',
   address: "#{Faker::Address.street_name} #{Faker::Address.city}",
   latitude: Faker::Address.latitude,
   longitude: Faker::Address.longitude,
-  description: Faker::GreekPhilosophers.quote,
+  description: "I've been touring for the past 3 months and I'm looking for something more chill now.",
   goal: "superstar",
-  experience_in_years: Faker::Number.within(range: 1..50),
-  number_of_concerts: Faker::Number.within(range: 1..10),
+  experience_in_years: '8',
+  number_of_concerts: '15, give or take',
   disponibility: "During the week-end",
 )
 user21.photos.attach(io: File.open('app/assets/images/user21.jpg'), filename: 'user21.jpg')
@@ -681,7 +681,7 @@ puts "-> #{user21.name} has been created"
 puts "---> #{user_song_21.title} has been added"
 
 user22 = User.new(
-  name: Faker::Name.first_name,
+  name: 'Alex',
   surname: Faker::Name.last_name,
   email: Faker::Internet.email,
   password: Faker::Barcode.ean(8),
@@ -691,8 +691,8 @@ user22 = User.new(
   longitude: Faker::Address.longitude,
   description: Faker::GreekPhilosophers.quote,
   goal: "superstar",
-  experience_in_years: Faker::Number.within(range: 1..50),
-  number_of_concerts: Faker::Number.within(range: 1..10),
+  experience_in_years: '6',
+  number_of_concerts: '11',
   disponibility: "Almost everyday",
 )
 user22.photos.attach(io: File.open('app/assets/images/user22.jpg'), filename: 'user22.jpg')
@@ -706,7 +706,7 @@ puts "-> #{user22.name} has been created"
 puts "---> #{user_song_22.title} has been added"
 
 user23 = User.new(
-  name: Faker::Name.first_name,
+  name: 'Christie',
   surname: Faker::Name.last_name,
   email: Faker::Internet.email,
   password: Faker::Barcode.ean(8),
@@ -716,8 +716,8 @@ user23 = User.new(
   longitude: Faker::Address.longitude,
   description: Faker::GreekPhilosophers.quote,
   goal: "superstar",
-  experience_in_years: Faker::Number.within(range: 1..50),
-  number_of_concerts: Faker::Number.within(range: 1..10),
+  experience_in_years: '8',
+  number_of_concerts: 'Around 12.',
   disponibility: "Only during the night 🧛‍♂️",
 )
 user23.photos.attach(io: File.open('app/assets/images/user23.jpg'), filename: 'user23.jpg')
@@ -756,11 +756,22 @@ puts "-> #{user24.name} has been created"
 puts "---> #{user_song_24.title} has been added"
 
 
-admin_style = MusicStyle.create!(name: 'toto')
+admin_style = MusicStyle.create!(name: 'Pop-Rock')
 UserMusicStyle.create!(user_id: admin.id, music_style_id: admin_style.id)
 UserMusicStyle.create!(user_id: user21.id, music_style_id: admin_style.id)
 UserMusicStyle.create!(user_id: user22.id, music_style_id: admin_style.id)
 UserMusicStyle.create!(user_id: user23.id, music_style_id: admin_style.id)
 UserMusicStyle.create!(user_id: user24.id, music_style_id: admin_style.id)
+
+UserInstrument.create!(user_id: user21.id, instrument_id: Instrument.all[4].id, level: 'beginer')
+UserInstrument.create!(user_id: user21.id, instrument_id: Instrument.all[3].id, level: 'medium')
+
+UserInstrument.create!(user_id: user22.id, instrument_id: Instrument.all[3].id, level: 'beginner')
+UserInstrument.create!(user_id: user22.id, instrument_id: Instrument.all[7].id, level: 'expert')
+
+UserInstrument.create!(user_id: user23.id, instrument_id: Instrument.all[3].id, level: 'expert')
+
+UserInstrument.create!(user_id: user24.id, instrument_id: Instrument.all[3].id, level: 'beginner')
+UserInstrument.create!(user_id: user24.id, instrument_id: Instrument.all[2].id, level: 'medium')
 
 puts "Finish the demo step"
