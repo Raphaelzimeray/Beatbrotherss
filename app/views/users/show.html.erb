@@ -4,7 +4,7 @@
     <% if current_user.favorited?(@user) %>
       <%= link_to ('<i class="fa-solid fa-heart unlike-btn-show"></i>').html_safe, user_user_unfavorited_path(@user), remote: true, method: :post %>
     <% else %>
-      <%= link_to ('<i class="fa-regular fa-heart like-btn-show"></i>').html_safe, new_favorite_path(@user), remote: true, method: :post %>
+      <%= link_to ('<i class="fa-regular fa-heart like-btn-show"></i>').html_safe, user_add_as_favorited_path(@user), remote: true, method: :post %>
     <% end%>
     <%= cl_image_tag @user.photos.first.key, height: 300, width: 400, crop: :fill %>
       <% if current_user.already_in_chatroom?(@user, current_user) %>

@@ -28,7 +28,6 @@ class UsersController < ApplicationController
 
   def index
     @body_class = 'index-background'
-
     if current_user
       @users = User.joins(:music_styles).where(music_styles: current_user.music_styles).uniq.reject { |user| user == current_user }.reject { |user| current_user.favorited?(user) }
     else
@@ -71,6 +70,12 @@ class UsersController < ApplicationController
   def user_unfavorited
     user = User.find(params[:user_id])
     current_user.unfavorite(user)
+    redirect_back(fallback_location: root_path)
+  end
+
+  def add_as_favorited
+    user = User.find(params[:user_id])
+    current_user.favorite(user)
     redirect_back(fallback_location: root_path)
   end
 
