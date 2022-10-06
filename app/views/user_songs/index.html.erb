@@ -1,15 +1,14 @@
-<% @user_songs.each do |song| %>
-  <div class="user-song-card">
-    <h1> Title: <%= song.title %></h1>
-    <h2>Category: <%= song.category %></h2>
-    <audio controls>
-      <source src="<%= rails_blob_url(song.url) %>" type="<%= song.url.content_type %>"/>
-    </audio>
+<div class="favorited-card-container">
+  <h1 class="mt-4 my-song-title-page"><%= @title %></h1>
+  <% @user_songs.each do |song| %>
+    <div class="user-song-card p-3 my-4">
+      <audio controls>
+        <source src="<%= rails_blob_url(song.url) %>" type="<%= song.url.content_type %>"/>
+      </audio>
+      <h3 class="index-user-songs-title mx-3 my-1"><%= song.title %></h3>
+      <p class="category-song mx-3"><em class="category-song-tags"># <%= song.category %></em></p>
+    </div>
+  <% end %>
+  <%= link_to ("<i class='fa-solid fa-plus'></i>  add a new song").html_safe, new_user_user_song_path, class: "add-song-btn my-4" %>
   </div>
-<% end %>
-
-
-
-<p>Would you like to add a new song?</p>
-<%= link_to "Add a song", new_user_user_song_path, class: "song-index-btn" %>
 </div>

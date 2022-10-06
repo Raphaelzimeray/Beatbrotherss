@@ -38,3 +38,17 @@ flex-direction: column;
   border-radius: 0 0px 10px 10px !important;
   border: 1px solid #dcd2c9 !important;
 }
+
+.category-song {
+  display: inline-block;
+  margin: 4px;
+}
+
+.category-song-tags {
+  border: 1px solid #009688;
+  color: #009688;
+  border-radius: 20px;
+  padding: 0px 8px;
+  background: #e5ecee66;
+  font-size: 0.9em;
+}

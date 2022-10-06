@@ -22,7 +22,7 @@
 .favorited-background {
   background: #7618FD;
   background-attachment: fixed;
-  background-image: radial-gradient(circle at 4.55% 104.17%, #f94646 0%, #cf004a 100%);
+  background-image: radial-gradient(circle at 4.55% 104.17%, #ff6464 0%, #e5346d 100%);
 }
 
 .index-background {
@@ -67,8 +67,8 @@ a {
 
 h1 {
   font-family: $headers-font;
-  font-size: 3.5em;
-  font-weight: bold;
+  font-size: 3em;
+  font-weight: 600;
 }
 
 h2 {
@@ -77,7 +77,24 @@ h2 {
   font-weight: bold;
 }
 
+.my-song-title-page {
+  color: #21716f;
+}
+
+.add-song-btn {
+  border-radius: 20px;
+  padding: 4px 20px;
+  font-size: 1.35em;
+  background: #4ba99e;
+  border: 1.5px solid #ffffff;
+  margin: 0px;
+  display: block;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0px 0px 10px 0px #00000060;
+  text-align: center;
+}
+
 .icones-passent-en-plus-clair-quand-on-est-sur-la-page{
   background-color: #F5F5F5;
 }
-
