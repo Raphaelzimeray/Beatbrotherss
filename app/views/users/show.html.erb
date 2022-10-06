@@ -7,6 +7,29 @@
       <%= link_to ('<i class="fa-regular fa-heart like-btn-show"></i>').html_safe, user_add_as_favorited_path(@user), remote: true, method: :post %>
     <% end%>
     <%= cl_image_tag @user.photos.first.key, height: 300, width: 400, crop: :fill %>
+    <div class="card-body">
+        <h2><%= @user.name %> </h2>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><i> <%= @user.description %> </i></li>
+          <li class="list-group-item"><div class="title--card">🎵 I'm into</div>
+          <%= @user.music_styles.map { |m| m.name }.join(', ').html_safe %></li>
+          <li class="list-group-item"><div class="title--card">👨‍🎤 I'm playing</div>
+          <%= @user.user_instruments.map { |i| "#{Instrument.find(i.instrument_id).name} (<i>#{i.level}</i>)" }.join(', ').html_safe %></li>
+          <li class="list-group-item"><div class="title--card">😎 I want to be</div>
+          A <%= @user.goal %></li>
+          <li class="list-group-item"><div class="title--card">⏳ I've been playing for</div>
+          <%= @user.experience_in_years %> years</li>
+          <% if @user.user_songs.exists? %>
+              <audio controls> <source src="<%= rails_blob_url(@user.user_songs.first.url) %>" type="<%= @user.user_songs.first.url.content_type %>"/></audio>
+          <% end %>
+        </ul>
+        <br>
+
+        <% if current_user.already_in_chatroom?(@user, current_user) %>
+          <%= link_to chatroom_path(current_user.common_chatroom(@user, current_user)) do %>
+            <button type="button" class="btn btn-show-contact">Contact me</button>
+          <% end %>
+        <% else %>
       <% if current_user.already_in_chatroom?(@user, current_user) %>
         <%= link_to chatroom_path(current_user.common_chatroom(@user, current_user)) do %>
           <button type="button" class="btn btn-show-contact "><i class="fa-solid fa-comment"></i></button>
