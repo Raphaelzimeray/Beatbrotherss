@@ -7,6 +7,10 @@
   }
 }
 
+.card-body {
+  margin-bottom: -24px;
+}
+
 *, *:before, *:after {
   box-sizing: border-box;
   padding: 0;
@@ -108,7 +112,7 @@ body {
   box-shadow: 0px 0px 10px 0px #00000060;
   padding-bottom: 8px;
   border-radius: 8px;
-  overflow: hidden;
+  overflow: scroll;
   position: absolute;
   will-change: transform;
   transition: all 0.3s ease-in-out;
