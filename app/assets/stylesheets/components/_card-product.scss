@@ -1,6 +1,6 @@
 .card-product {
   overflow: hidden;
-  height: 88px;
+  height: 120px;
   background: #e8ebf5e6;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.20);
   display: flex;
@@ -8,10 +8,6 @@
   border-radius: 8px;
   text-decoration: none;
   color: black;
-}
-
-.card-product i {
-  color: #DA679C;
 }
 
 .card-product img {
@@ -24,8 +20,6 @@
   font-size: 1.5em;
   font-weight: 600;
   margin: 0;
-  color: black;
-
 }
 
 .card-product p {
@@ -34,7 +28,6 @@
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
-  color: black;
 }
 
 .card-product .card-product-infos {
