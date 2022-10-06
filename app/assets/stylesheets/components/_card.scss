@@ -85,6 +85,7 @@ body {
   width: 90vw;
   max-width: 400px;
   background: #fbfcffcf;
+  box-shadow: 0px 0px 10px 0px #00000060;
   padding-bottom: 8px;
   border-radius: 8px;
   overflow: scroll;
@@ -196,4 +197,12 @@ body {
 
 .user-song-card{
   margin-bottom: 12px;
+  background-color: #F2F5FE;
+  border: 1px solid #237874;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px 0px #00000060;
+}
+
+.index-user-songs-title {
+  font-weight: 600;
 }

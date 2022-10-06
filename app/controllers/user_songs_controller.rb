@@ -2,11 +2,17 @@ class UserSongsController < ApplicationController
 
   def index
     @body_class = 'song-background'
-    @user_songs = UserSong.all
+    user = current_user
+    @user_songs = user.user_songs
+    if user.user_songs[1]
+      @title = 'MY SONGS'
+    else
+      @title = 'MY SONG'
+    end
   end
 
   def show
-    @user_song = UserSong.find(params[:id])
+    # @user_song = UserSong.find(params[:id])
   end
 
   def new
@@ -37,7 +43,7 @@ class UserSongsController < ApplicationController
   private
 
   def user_song_params
-    params.require(:user_song).permit(:title, :url, :category)
+    params.require(:user_song).permit(:title, :url, :category, :user_song, :user_id)
   end
 
 end
