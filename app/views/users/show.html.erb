@@ -1,6 +1,14 @@
 <br>
 <div class="tinder--show--cards">
   <div class="card mb-3 tinder--show--card">
+<<<<<<< Updated upstream
+=======
+    <% if current_user.favorited?(@user) %>
+      <%= link_to ('<i class="fa-solid fa-heart unlike-btn-show"></i>').html_safe, user_user_unfavorited_path(@user), remote: true, method: :post %>
+    <% else %>
+      <%= link_to ('<i class="fa-regular fa-heart like-btn-show"></i>').html_safe, user_add_as_favorited_path(@user), remote: true, method: :post %>
+    <% end%>
+>>>>>>> Stashed changes
     <%= cl_image_tag @user.photos.first.key, height: 300, width: 400, crop: :fill %>
     <div class="card-body">
         <h2><%= @user.name %> </h2>

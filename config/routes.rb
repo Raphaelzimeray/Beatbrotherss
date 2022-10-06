@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :users, only: :index do
     get 'favorited_users', to: "users#index_favorited"
     post 'user_unfavorited', to: "users#user_unfavorited"
+    post 'add_as_favorited', to: "users#add_as_favorited"
   end
 
   resources :users, only: :edit do
