@@ -1,17 +1,18 @@
-<h1>Upload a new song</h1>
-
-<%= form_for [@user, @user_song] do |f| %>
-<%= f.label :title %>
-<%= f.text_field :title %>
-<br>
-<br>
-<%= f.label "Category" %>
-<%= f.text_field :category %>
-<br>
-<br>
-<%= f.label "Audio file" %>
-<%= f.file_field :url %>
-<br>
-<br>
-<%= f.submit %>
-<% end %>
+<div class="favorited-card-container">
+  <h1 class="my-4 new-song-title-page">Upload a new song</h1>
+  <%= form_for [@user, @user_song] do |f| %>
+  <%= f.label :title, class: 'new-song-label' %>
+  <%= f.text_field :title, class: 'new-song-title-input' %>
+  <br>
+  <br>
+  <%= f.label "Category", class: 'new-song-label' %>
+  <%= f.select :category, ['Classical', 'Blues', 'Country', 'Electronic', 'EDM', 'House', 'Techno', 'Folk', 'Rap', 'Hip-Hop', 'Jazz', 'Pop', 'Rock', 'Classic Rock', 'Progressive Rock', 'Hard Rock', 'Metal', 'Punk'], {}, {class: 'new-song-category-input'} %>
+  <br>
+  <br>
+  <%= f.label "Audio file", class: 'new-song-label' %>
+  <%= f.file_field :url, class: 'new-song-add-input' %>
+  <br>
+  <br>
+  <%= f.submit "Add you song", class: 'add-new-song-btn' %>
+  <% end %>
+</div>

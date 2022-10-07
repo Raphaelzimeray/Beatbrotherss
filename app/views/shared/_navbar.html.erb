@@ -4,20 +4,20 @@
       <% if controller_name == 'users' && action_name == 'edit' %>
           <a href="/users/<%=current_user.id%>/edit"><i class="fa-solid fa-user"></i></a>
         <% else  %>
-          <a href="/users/<%=current_user.id%>/edit"><i class="fa-regular fa-user"></i>
+          <a href="/users/<%=current_user.id%>/edit"><i class="dark-icon fa-regular fa-user"></i>
       <% end %>
 
       <% if controller_name == 'users' && action_name == 'index_favorited' %>
         <a href="/users/<%=current_user.id%>/favorited_users"><i class="fa-solid fa-heart"></i></a>
       <% else  %>
-        <a href="/users/<%=current_user.id%>/favorited_users"><i class="fa-regular fa-heart"></i></a>
+        <a href="/users/<%=current_user.id%>/favorited_users"><i class="dark-icon fa-regular fa-heart"></i></a>
       <% end %>
 
       <% if controller_name == 'users' && action_name == 'index' %>
         <a href="/users"><i class="fa-solid fa-compact-disc"></i></a>
       <% else %>
         <a href="/users">
-          <svg xmlns="http://www.w3.org/2000/svg" class ="icon-svg-compact-disc" viewBox="0 0 512 512">
+          <svg xmlns="http://www.w3.org/2000/svg" class ="dark-icon icon-svg-compact-disc" viewBox="0 0 512 512">
             <path d="M256 0C114.618 0 0 114.618 0 256s114.618 256 256 256 256-114.618 256-256S397.382 0 256 0zm0 469.333c-117.818 0-213.333-95.515-213.333-213.333S138.182 42.667 256 42.667 469.333 138.182 469.333 256 373.818 469.333 256 469.333z"/>
             <path d="M341.333 256c0-47.131-38.202-85.333-85.333-85.333S170.667 208.869 170.667 256s38.202 85.333 85.333 85.333 85.333-38.202 85.333-85.333zm-128 0c0-23.567 19.099-42.667 42.667-42.667s42.667 19.099 42.667 42.667-19.1 42.667-42.667 42.667-42.667-19.1-42.667-42.667z"/>
             <path d="M405.333 234.667C393.551 234.667 384 244.218 384 256c0 70.693-57.307 128-128 128-11.782 0-21.333 9.551-21.333 21.333 0 11.782 9.551 21.333 21.333 21.333 94.257 0 170.667-76.41 170.667-170.667 0-11.781-9.552-21.332-21.334-21.332zM277.333 106.667c0-11.782-9.551-21.333-21.333-21.333-94.257 0-170.667 76.41-170.667 170.667 0 11.782 9.551 21.333 21.333 21.333 11.782 0 21.333-9.551 21.333-21.333 0-70.693 57.307-128 128-128 11.783-.001 21.334-9.552 21.334-21.334z"/>
@@ -28,14 +28,14 @@
       <% if controller_name == 'chatrooms' && action_name == 'index' %>
         <a href="/chatrooms"><i class="fa-solid fa-comment"></i></a>
       <% else %>
-           <a href="/chatrooms"><i class="fa-regular fa-comment"></i></a>
+           <a href="/chatrooms"><i class="dark-icon fa-regular fa-comment"></i></a>
       <% end %>
 
       <% if controller_name == 'user_songs' && action_name == 'index' %>
         <a href="/users/<%=current_user.id%>/user_songs"><i class="fa-solid fa-music"></i></a>
       <% else %>
          <a href="/users/<%=current_user.id%>/user_songs">
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon-svg-compact-disc" viewBox="0 0 41.246 41.246">
+          <svg xmlns="http://www.w3.org/2000/svg" class="dark-icon icon-svg-compact-disc" viewBox="0 0 41.246 41.246">
             <path d="M39.484 4.017c0-2.515-1.401-4.017-3.75-4.017H16.567c-1.128 0-3.75.463-3.75 4.75v20.549c-2.346-.287-4.947.473-7.055 2.071-1.882 1.427-3.213 3.363-3.746 5.452-.555 2.173-.19 4.251 1.025 5.854 1.238 1.633 3.263 2.57 5.558 2.57 2.092 0 4.245-.76 6.062-2.138 2.876-2.181 4.399-5.519 3.899-8.531l.004-18.7a1.254 1.254 0 0 1 1.252-1.251h12.667c.689 0 1.25.561 1.25 1.25l.004 9.38c-2.363-.318-5.011.441-7.148 2.062-1.882 1.427-3.213 3.363-3.746 5.451-.555 2.174-.19 4.252 1.025 5.854 1.237 1.632 3.262 2.568 5.558 2.568h.001c2.091 0 4.244-.761 6.062-2.138 2.737-2.076 4.248-5.177 3.951-8.104l.044-22.932zm-2 14.7-.044 8.28.006.114c.243 2.215-1 4.707-3.166 6.35-1.473 1.116-3.195 1.731-4.854 1.731h-.001c-1.688 0-3.097-.632-3.964-1.777-.84-1.106-1.082-2.58-.682-4.149.423-1.651 1.494-3.197 3.018-4.354 2.029-1.54 4.63-2.104 6.635-1.461l1.307.419-.005-11.994a3.254 3.254 0 0 0-3.25-3.25H19.817a3.256 3.256 0 0 0-3.252 3.25l-.004 18.787.016.177c.407 2.269-.848 4.949-3.124 6.676-1.472 1.115-3.195 1.73-4.853 1.73-1.688 0-3.096-.631-3.964-1.777-.841-1.106-1.083-2.58-.683-4.149.423-1.652 1.494-3.198 3.018-4.354 1.467-1.113 3.187-1.726 4.843-1.726a5.89 5.89 0 0 1 1.712.244l1.291.392V4.752c0-2.75 1.271-2.75 1.75-2.75h19.167c.909 0 1.75.244 1.75 2.017v14.698z"/>
           </svg>
         </a>

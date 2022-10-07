@@ -8,12 +8,16 @@
 }
 .footer-links a {
   color: whitesmoke;
-  opacity: 0.6;
   text-decoration: none;
   font-size: xx-large;
   padding: 0px 10px;
   margin: 6px;
 }
+
 .footer-links a:hover {
   opacity: 1;
+}
+
+.dark-icon {
+  opacity: 0.6;
 }

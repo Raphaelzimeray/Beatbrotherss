@@ -11,9 +11,9 @@
   text-align: end;
   p {
     background-color: rgba(106, 130, 251, 0.5);
-    border-radius: 15px;
+    border-radius: 8px;
     width: 200px;
-    padding-right: 10px;;
+    padding: 6px 10px;
   }
 }
 
@@ -22,4 +22,8 @@
   border-radius: 15px;
   width: 200px;
   padding-left: 10px;
+}
+
+.light-time {
+  color: #8e86a2;
 }

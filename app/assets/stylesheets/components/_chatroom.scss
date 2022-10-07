@@ -20,7 +20,6 @@
   flex-grow: 1;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
   .messages {
     height: 100%;
     overflow: scroll;
@@ -42,7 +41,12 @@
       width: 100%;
     }
     .btn-chatroom {
-      background-image: linear-gradient(to right, rgba(184, 155, 255, 0.7), rgba(106, 130, 251, 0.7));
+      background-color: #9f40ac;
+      border-radius: 20px;
+      padding: 4px 27px;
+      font-weight: 600;
+      color: white;
+      border: none;
     }
   }
 }

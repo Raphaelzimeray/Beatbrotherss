@@ -12,6 +12,7 @@
 @import "pages/index";
 @import "pages/show_user";
 @import "pages/onboarding";
+@import "pages/new_song";
 
 .homepage-background {
   background: #7618FD;
@@ -34,7 +35,7 @@
 .chatroom-background {
   background: #7618FD;
   background-attachment: fixed;
-  background-image: radial-gradient(circle at 4.55% 104.17%, #935ed5 0, #802895 100%);
+  background-image: radial-gradient(circle at 4.55% 104.17%, #9065c5 0, #a138a8 100%);
 }
 
 .show-background {
@@ -77,8 +78,31 @@ h2 {
   font-weight: bold;
 }
 
+body {
+  background: #7618FD;
+  background-image: linear-gradient(200deg, #7c49bc, #6547dc);
+  background-attachment: fixed;
+}
+
 .my-song-title-page {
   color: #21716f;
+}
+
+.my-fav-title-page {
+  color: #b60045;
+}
+
+.my-chat-title-page {
+  color: #590070;
+}
+
+.new-song-title-page {
+  color: #3c0f7c;
+  font-size: 2.5em;
+}
+
+.log-in-title-page {
+  color: #c1abe3;
 }
 
 .add-song-btn {
@@ -95,6 +119,39 @@ h2 {
   text-align: center;
 }
 
-.icones-passent-en-plus-clair-quand-on-est-sur-la-page{
-  background-color: #F5F5F5;
+.log-in-input {
+  border-radius: 37px;
+  padding: 10px 16px;
+  font-size: 1em;
+  margin-bottom: 39px;
+}
+
+.log-in-label {
+  color: white;
+  font-size: 1.25em;
+  padding-left: 16px;
+}
+
+.log-in-remember {
+  color: white;
+  font-size: 1.1em;
+  padding-left: 20px;
+  margin-top: -10px;
+}
+
+.log-in-forgot-pswd {
+  color: white;
+  padding-top: -20px !important;
+  position: relative;
+  top: -35px;
+  left: 15px;
+  font-style: italic;
+  opacity: 0.7;
+}
+
+.never-use-label {
+  color: white;
+  opacity: 0.7;
+  text-align: center;
+  margin-top: 100px;
 }
