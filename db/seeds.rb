@@ -91,7 +91,10 @@ admin.photos.attach(io: File.open('app/assets/images/ringo.jpeg'), filename: 'ri
 admin.save!
 user_song_admin = UserSong.new(title:"Black and Blue", category: "Jazz", user_id: admin.id)
 user_song_admin.url.attach(io: File.open('app/assets/audio/Black And Blue.mp3'), filename: 'Black And Blue.mp3')
+user_song_admin_10 = UserSong.new(title: "Unchain My Heart", category: "Rock", user_id: admin.id)
+user_song_admin_10.url.attach(io: File.open('app/assets/audio/Unchain My Heart.mp3'), filename: 'Unchain My Heart.mp3')
 user_song_admin.save!
+user_song_admin_10.save!
 
 puts "-> #{admin.name} has been created"
 puts "---> #{user_song_admin.title} has been added"
@@ -100,7 +103,7 @@ user1 = User.new(
 
   name: "Matthis",
   surname: "Savagnac",
-  email: "matthis@testt.fr",
+  email: "matthis@test.fr",
   password: "123456",
   birth_date: "07/05/1990",
   address: "17 rue du Louvre, 75001 Paris",
@@ -603,11 +606,25 @@ user_song_20.save!
 puts "-> #{user20.name} has been created"
 puts "---> #{user_song_20.title} has been added"
 
-# puts "creating Chatrooms..."
+puts "creating Chatrooms..."
 
-# Chatroom.create!(name: "Conversation")
-# Message.create!(content: "Hi, I love your music ! :)", chatroom_id: Chatroom.first.id, user_id: admin.id)
-# Message.create!(content: "Thanks, I just listened to yours and love it aswell ! 🔥", chatroom_id: Chatroom.first.id, user_id: user2.id)
+chat_1 = Chatroom.create!(name: "Conversation")
+UserChatroom.create!(user_id: admin.id, chatroom_id: chat_1.id)
+UserChatroom.create!(user_id: user1.id, chatroom_id: chat_1.id)
+Message.create!(content: "Hi, I love your music ! :)", chatroom_id: chat_1.id, user_id: admin.id)
+Message.create!(content: "Thanks, I just listened to yours and love it aswell ! 🔥", chatroom_id: chat_1.id, user_id: user1.id)
+
+chat_2 = Chatroom.create!(name: "Conversation 2")
+UserChatroom.create!(user_id: admin.id, chatroom_id: chat_2.id)
+UserChatroom.create!(user_id: user2.id, chatroom_id: chat_2.id)
+Message.create!(content: "Hi, I'm looking for a singer, are you still free ?", chatroom_id: chat_2.id, user_id: admin.id)
+Message.create!(content: "Oh yes ! It will be a pleasur to work with you", chatroom_id: chat_2.id, user_id: user2.id)
+
+chat_3 = Chatroom.create!(name: "Conversation 3")
+UserChatroom.create!(user_id: admin.id, chatroom_id: chat_3.id)
+UserChatroom.create!(user_id: user3.id, chatroom_id: chat_3.id)
+Message.create!(content: "Hi, I can we meet together ?", chatroom_id: chat_3.id, user_id: admin.id)
+Message.create!(content: "See you soon bro'", chatroom_id: chat_3.id, user_id: user3.id)
 
 puts 'Assign music style to user ...'
 
@@ -708,8 +725,8 @@ puts "---> #{user_song_22.title} has been added"
 user23 = User.new(
   name: 'Christie',
   surname: Faker::Name.last_name,
-  email: Faker::Internet.email,
-  password: Faker::Barcode.ean(8),
+  email: 'christie@mail.fr',
+  password: '123456',
   birth_date: Faker::Date.birthday,
   address: "#{Faker::Address.street_name} #{Faker::Address.city}",
   latitude: Faker::Address.latitude,
