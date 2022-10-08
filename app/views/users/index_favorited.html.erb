@@ -1,5 +1,5 @@
-<br>
 <div class="favorited-card-container">
+  <h1 class="my-4 my-fav-title-page"><%= @title %></h1>
   <% @favorited_users.each do |favorite| %>
     <% user = User.find(favorite.favoritable_id) %>
     <%= link_to user_path(user) do %>
@@ -7,7 +7,8 @@
         <%= cl_image_tag user.photos.first.key, height: 300, width: 400, crop: :fill %>
         <div class="card-product-infos">
           <h2> <%= user.name %> </h2>
-          <p> <%= user.music_styles[0].name %> </p>
+          <p>🎵 <%= user.music_styles.map { |m| m.name }.join(', ').html_safe %> </p>
+          <p>👨‍🎤 <%= user.user_instruments.map { |i| "#{Instrument.find(i.instrument_id).name} (<i>#{i.level}</i>)" }.join(', ').html_safe %> </p>
           <%= link_to '<i class="fa-solid fa-heart"></i>'.html_safe, user_user_unfavorited_path(user), remote: true, method: :post, class: 'like-btn-fav' %>
         </div>
       </div>

@@ -1,31 +1,48 @@
 .chatrooms {
-  background-color: rgba(255, 255, 255, 0.618);
-  height: 76vh;
+  background-color: #ffffffdb;
+  height: 72vh;
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
   max-width: 400px;
-    margin: auto;
+  margin: auto;
   .chatroom-card {
     color: black;
     display: flex;
-    background-color: white;
-    padding: 10px;
-    border-radius: 8px;
+    // background-color: white;
+    padding: 13px;
+    // border-radius: 8px;
+    border-bottom: 1px solid #e4dae6;
     .chatroom-card-avatar {
-      width: 60px;
-      height: 60px;
+      width: 70px;
+      height: 70px;
       border-radius: 50%;
       object-fit: cover;
+    }
+    .chatroom-card-btn {
+      position: relative;
+      top: 25px;
+      right: -315px;
+      font-size: 1.5em;
+      color: #8e86a2;
+      opacity: 0.6;
+      width: 0;
     }
     .chatroom-card-content {
       margin-left: 20px;
       .chatroom-card-content-name {
         font-size: 24px;
         margin: 0;
+        line-height: 1.1em;
+      }
+      .chatroom-card-content-time {
+        font-size: 0.8em;
+        margin: 0;
+        color: #8e86a2;
       }
       .chatroom-card-content-message {
-        font-size: 11px;
+        font-size: 0.8em;
         margin: 0;
+        line-height: 1em;
       }
     }
   }

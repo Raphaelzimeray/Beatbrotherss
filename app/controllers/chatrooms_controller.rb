@@ -8,5 +8,6 @@ class ChatroomsController < ApplicationController
   def index
     @body_class = 'chatroom-background'
     @user_chatrooms = current_user.user_chatrooms.uniq
+    @title = 'MESSAGES'
   end
 end

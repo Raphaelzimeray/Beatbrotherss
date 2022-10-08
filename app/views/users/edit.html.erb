@@ -3,7 +3,7 @@
   <div class="card mb-3 tinder--show--card">
     <%= cl_image_tag @user.photos.first.key, height: 300, width: 400, crop: :fill, class: "img-show" %>
       <a class="modify-button-img zoomage">change profil picture</a>
-    <div class="card-body">
+    <div class="card-body pb-0">
         <h2><%= @user.name %> </h2>
         <ul class="list-group list-group-flush">
 
@@ -21,9 +21,9 @@
           <%= @user.user_instruments.map { |i| "#{Instrument.find(i.instrument_id).name} (<i>#{i.level}</i>)" }.join(', ').html_safe %></li>
           <li class="list-group-item"><div class="title--card">😎 I want to be</div>
           A <%= @user.goal %></li>
-          <li class="list-group-item"><div class="title--card">⏳ I've been playing for</div>
+          <li class="list-group-item end-edit"><div class="title--card">⏳ I've been playing for</div>
           <%= @user.experience_in_years %> years</li>
-          <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
+          <%= link_to 'Sign out', destroy_user_session_path, :method => :delete, class: 'sign-out' %>
         </ul>
         <br>
     </div>
