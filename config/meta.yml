@@ -1,0 +1,5 @@
+meta_product_name: "BeatBrothers"
+meta_title: "BeatBrothers - Find your musical soulmate today"
+meta_description: "Beatbrothers help you to find other musicians to create music from afar or not."
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
