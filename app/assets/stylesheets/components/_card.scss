@@ -197,8 +197,9 @@ body {
 }
 
 .favorited-card-container {
-  max-width: 400px;
-  margin: auto;
+  overflow: scroll;
+  padding: 5px;
+  height: 88vh;
 }
 
 .user-song-card{
