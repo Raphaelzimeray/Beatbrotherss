@@ -673,8 +673,8 @@ user21 = User.new(
 user21.photos.attach(io: File.open('app/assets/images/user21.jpg'), filename: 'user21.jpg')
 user21.save!
 
-user_song_21 = UserSong.new(title: "La Foule", category: "Pop", user_id: user21.id)
-user_song_21.url.attach(io: File.open('app/assets/audio/La Foule - Il Triangolo del Tango.mp3'), filename: 'La Foule - Il Triangolo del Tango.mp3')
+user_song_21 = UserSong.new(title: "Warfare Confederation Song1", category: "Pop-Rock", user_id: user21.id)
+user_song_21.url.attach(io: File.open('app/assets/audio/Warfare Confederation (Royalty Free Pop Rock Music).mp3'), filename: 'Warfare Confederation (Royalty Free Pop Rock Music).mp3')
 user_song_21.save!
 
 puts "-> #{user21.name} has been created"
@@ -698,8 +698,8 @@ user22 = User.new(
 user22.photos.attach(io: File.open('app/assets/images/user22.jpg'), filename: 'user22.jpg')
 user22.save!
 
-user_song_22 = UserSong.new(title: "Rocket Man", category: "Pop", user_id: user22.id)
-user_song_22.url.attach(io: File.open('app/assets/audio/Rocket Man (I Think Its Going To Be A Long Long Time).mp3'), filename: 'Rocket Man (I Think Its Going To Be A Long Long Time).mp3')
+user_song_22 = UserSong.new(title: "Dreaming", category: "Pop-Rock", user_id: user22.id)
+user_song_22.url.attach(io: File.open('app/assets/audio/[Royalty Free Music] Dreaming - Inspiring Uplifting Piano.mp3'), filename: 'Inspiring Uplifting Piano.mp3')
 user_song_22.save!
 
 puts "-> #{user22.name} has been created"
@@ -723,8 +723,8 @@ user23 = User.new(
 user23.photos.attach(io: File.open('app/assets/images/user23.jpg'), filename: 'user23.jpg')
 user23.save!
 
-user_song_23 = UserSong.new(title: "Stand By Me", category: "Blues", user_id: user23.id)
-user_song_23.url.attach(io: File.open('app/assets/audio/Stand by Me.mp3'), filename: 'Stand by Me.mp3')
+user_song_23 = UserSong.new(title: "Crazy fast bass", category: "Pop-Rock", user_id: user23.id)
+user_song_23.url.attach(io: File.open('app/assets/audio/Crazy Fast Slap Bass solo.mp3'), filename: 'Crazy Fast Slap Bass solo.mp3')
 user_song_23.save!
 
 puts "-> #{user23.name} has been created"
