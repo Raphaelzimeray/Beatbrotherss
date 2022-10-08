@@ -1,4 +1,4 @@
-<div class="favorited-card-container">
+<div class="page-container favorited-card-container">
   <h1 class="my-4 my-fav-title-page"><%= @title %></h1>
   <% @favorited_users.each do |favorite| %>
     <% user = User.find(favorite.favoritable_id) %>

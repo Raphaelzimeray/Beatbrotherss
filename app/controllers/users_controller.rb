@@ -65,8 +65,8 @@ class UsersController < ApplicationController
   def index_favorited
     @body_class = 'favorited-background'
     @favorited_users = current_user.all_favorites
-    @title = 'MY FAVOURITE'
-    @title = 'MY FAVOURITES' if @favorited_users.count > 1
+    @title = 'MY FAVORITE'
+    @title = 'MY FAVORITES' if @favorited_users.count > 1
   end
 
   def user_unfavorited
